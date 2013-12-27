@@ -34,4 +34,16 @@ public class blockHighPressureCompressor extends Block {
 		
 		sideIcon = register.registerIcon(blockInfo.TEXTURE_LOC + ":" + blockInfo.highPressureCompressorSIDE);	
  	}
+	
+	@SideOnly(Side.CLIENT)
+	@Override
+	public Icon getIcon(int side, int meta) {
+		if (side == 0) {
+			return botIcon;
+		}else if(side == 1) {
+			return topIcon;
+		}else{
+			return sideIcon;
+		}	
+	}
 }
