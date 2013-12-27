@@ -42,6 +42,8 @@ public class items {
 	}
 	
 	public static void registerItemRecipes() {
+		
+		//defectiveLowPressureCore
 		GameRegistry.addRecipe(new ItemStack(defectiveLowPressureCore),
 			new Object[] { 	"SPS",
 							"I I",
@@ -52,6 +54,8 @@ public class items {
 							'I', Item.ingotIron,
 							
 						 });	
+		
+		//defectiveHighPressureCore
 		GameRegistry.addRecipe(new ItemStack(defectiveHighPressureCore),
 				new Object[] { 	"GPG",
 								"RDR",
@@ -61,7 +65,35 @@ public class items {
 								'P', Block.pistonBase,
 								'R', Item.redstoneRepeater,
 								'D', Item.diamond,
-							 });	
+							 });
+		
+		//IronBlock <- IronPiece
+		GameRegistry.addRecipe(new ItemStack(Block.blockIron),
+				new Object[] { 	"III",
+								"III",
+								"III",
+								
+								'G', items.ironPiece,
+							 });
+		
+		//GoldBlock <- GoldPiece
+		GameRegistry.addRecipe(new ItemStack(Block.blockGold),
+				new Object[] { 	"GGG",
+								"GGG",
+								"GGG",
+								
+								'G', items.goldPiece,
+							 });
+		
+		//DiamondBlock <- DiamondPieces
+		GameRegistry.addRecipe(new ItemStack(Block.blockDiamond),
+				new Object[] { 	"DDD",
+								"DDD",
+								"DDD",
+								
+								'G', items.diamondPiece,
+							 });
+	
 	}
 	public static void registerSmelting(){
 		

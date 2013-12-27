@@ -19,7 +19,6 @@ public class blockHighPressureCompressor extends Block {
 		setStepSound(Block.soundMetalFootstep);
 		setUnlocalizedName(blockInfo.highPressureCompressor_UNLOCALIZED_NAME);
 	}
-	
 	@SideOnly(Side.CLIENT)
 	private Icon topIcon;
 	@SideOnly(Side.CLIENT)
