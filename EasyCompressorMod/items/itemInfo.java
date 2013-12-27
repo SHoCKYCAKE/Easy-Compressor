@@ -3,7 +3,7 @@ package EasyCompressorMod.items;
 public class itemInfo {
 	
 	//Texture Location
-	public static final String TEXTURE_LOC = "texture";
+	public static final String TEXTURE_LOC = "easycompressor";
 	
 	
 	//Names
