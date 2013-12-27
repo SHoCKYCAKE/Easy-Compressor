@@ -2,7 +2,7 @@ package EasyCompressorMod.blocks;
 
 public class blockInfo {
 	
-	//Textures
+	//Texture Location
 	public static final String TEXTURE_LOC = "texture";
 	
 	

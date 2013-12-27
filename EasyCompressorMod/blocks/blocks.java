@@ -15,7 +15,7 @@ public class blocks {
 	public static Item itemLowPressureCore;
 	public static Item itemHighPressureCore;
 	
-	//Initize Blocks
+	//Initilize Blocks
 	public static void init() {
 		blockHighPressureCompressor = new blockHighPressureCompressor(blockInfo.highPressureCompressor_ID);
 		GameRegistry.registerBlock(blockHighPressureCompressor, ItemMachine.class, blockInfo.highPressureCompressor_KEY);
