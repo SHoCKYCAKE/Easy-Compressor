@@ -25,7 +25,7 @@ public class blockLowPressureCompressor extends Block {
 	@SideOnly(Side.CLIENT)
 	private Icon botIcon;
 	@SideOnly(Side.CLIENT)
-	private Icon sideIcon;	
+	private Icon sideIcons;
 	
 	@Override
 	@SideOnly(Side.CLIENT)
@@ -33,8 +33,19 @@ public class blockLowPressureCompressor extends Block {
 		topIcon = register.registerIcon(blockInfo.TEXTURE_LOC + ":" + blockInfo.lowPressureCompressorTOP);
 		botIcon = register.registerIcon(blockInfo.TEXTURE_LOC + ":" + blockInfo.lowPressureCompressorBOTTOM);
 		
-		sideIcon = register.registerIcon(blockInfo.TEXTURE_LOC + ":" + blockInfo.lowPressureCompressorSIDE);	
+		sideIcons = register.registerIcon(blockInfo.TEXTURE_LOC + ":" + blockInfo.lowPressureCompressorSIDE);	
+	}
 
+	@SideOnly(Side.CLIENT)
+	@Override
+	public Icon getIcon(int side, int meta) {
+		if (side == 0) {
+			return botIcon;
+		}else if(side == 1) {
+			return topIcon;
+		}else{
+			return sideIcons;
+		}	
 	}
 	
 }
