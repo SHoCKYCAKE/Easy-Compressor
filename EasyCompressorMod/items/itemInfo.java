@@ -2,11 +2,11 @@ package EasyCompressorMod.items;
 
 public class itemInfo {
 	
-	//Texture	
+	//Texture Location
 	public static final String TEXTURE_LOC = "texture";
 	
 	
-	//Name
+	//Names
 	
 	//DHPC
 	public static final String defectiveHighPressureCore_UNLOCALIZED_NAME = "defectiveHighPressureCore";
@@ -77,7 +77,7 @@ public class itemInfo {
 	
 	
 	
-	//Icon
+	//Icons
 	
 	//DHPC
 	public static final String defectiveHighPressureCore_ICON = "defectiveHighPressureCore";

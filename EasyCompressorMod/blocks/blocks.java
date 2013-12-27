@@ -15,6 +15,7 @@ public class blocks {
 	public static Item itemLowPressureCore;
 	public static Item itemHighPressureCore;
 	
+	//Initize Blocks
 	public static void init() {
 		blockHighPressureCompressor = new blockHighPressureCompressor(blockInfo.highPressureCompressor_ID);
 		GameRegistry.registerBlock(blockHighPressureCompressor, ItemMachine.class, blockInfo.highPressureCompressor_KEY);
@@ -24,12 +25,14 @@ public class blocks {
 		
 	}
 	
+	//Add all Names 
 	public static void addNames() {
 		LanguageRegistry.addName(blockHighPressureCompressor, blockInfo.highPressureCompressor_NAME);
 		
 		LanguageRegistry.addName(blockLowPressureCompressor, blockInfo.lowPressureCompressor_NAME);
 	}
 	
+	//Register all Recipies
 	public static void registerBlockRecipes() {
 		GameRegistry.addRecipe(new ItemStack(blockLowPressureCompressor),
 			new Object[] { 	"IPI",

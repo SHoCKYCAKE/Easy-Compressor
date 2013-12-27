@@ -2,11 +2,12 @@ package EasyCompressorMod.blocks;
 
 public class blockInfo {
 	
-	//Texture
+	//Textures
 	public static final String TEXTURE_LOC = "texture";
 	
 	
-	//Name
+	
+	//Names
 	
 	//HPComp
 	public static final String highPressureCompressor_UNLOCALIZED_NAME = "highPressureCompressor";
@@ -30,7 +31,8 @@ public class blockInfo {
 	public static final int lowPressureCompressor_DEFAULT = 2082;
 	
 	
-	//Icon
+	
+	//Icons
 	
 	//LPComp
 	public static final String lowPressureCompressorTOP = "lowPressureCompressor_TOP";
