@@ -18,8 +18,8 @@ public class guiLowPressureCompressor extends GuiContainer{
 		
 		super(new containerLowPressureCompressor(invPlayer, lpc));
 		
-		xSize = 175;
-		ySize = 153;
+		xSize = 176;
+		ySize = 154;
 	}
 	
 	private static final ResourceLocation texture = new ResourceLocation("easycompressor", "textures/gui/lowPressureCompressorGUI.png");

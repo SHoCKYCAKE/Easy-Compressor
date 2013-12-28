@@ -50,7 +50,16 @@ public class blockCompressedAir extends Block {
 			return sideIcon;
 		}	
 	}
+	
+	//What is dropped
 	public int idDropped(int metadate, Random random, int fortune){
 		return itemInfo.compressedAir_DEFAULT;
 	}
+	
+	//How much is dropped ( 1 = 1 at least ) + (a number between 1-2)
+    public int quantityDropped(Random par1Random)
+    {
+        return 1 + par1Random.nextInt(3);
+    }
+
 }
