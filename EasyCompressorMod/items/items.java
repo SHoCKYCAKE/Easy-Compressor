@@ -18,6 +18,8 @@ public class items {
 	public static Item goldPiece;
 	public static Item diamondPiece;
 	
+	public static Item compressedAir;
+	
 	//Initilize Items
 	public static void init() {
 		
@@ -31,6 +33,9 @@ public class items {
 		ironPiece = new itemIronPiece(itemInfo.ironPiece_ID);
 		goldPiece = new itemGoldPiece(itemInfo.goldPiece_ID);
 		diamondPiece = new itemDiamondPiece(itemInfo.diamondPiece_ID);
+		
+		//CompressedAir
+		compressedAir = new itemCompressedAir(itemInfo.compressedAir_ID);
 	}
 	
 	
@@ -47,6 +52,10 @@ public class items {
 		LanguageRegistry.addName(ironPiece, itemInfo.ironPiece_NAME);
 		LanguageRegistry.addName(goldPiece, itemInfo.goldPiece_NAME);
 		LanguageRegistry.addName(diamondPiece, itemInfo.diamondPiece_NAME);
+		
+		//CompressedAir
+		LanguageRegistry.addName(compressedAir, itemInfo.compressedAir_NAME);
+
 
 	}
 	
@@ -83,7 +92,7 @@ public class items {
 								"III",
 								"III",
 								
-								'G', items.ironPiece,
+								'I', items.ironPiece,
 							 });
 		
 		//GoldBlock <- GoldPiece
@@ -101,7 +110,7 @@ public class items {
 								"DDD",
 								"DDD",
 								
-								'G', items.diamondPiece,
+								'D', items.diamondPiece,
 							 });
 	
 	}

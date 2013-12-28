@@ -17,6 +17,9 @@ public class blockInfo {
 	public static final String lowPressureCompressor_UNLOCALIZED_NAME = "lowPressureCompressor";
 	public static final String lowPressureCompressor_NAME = "Low Pressure Compressor";
 	
+	//Ore
+	public static final String compressedAirOre_UNLOCALIZED_NAME = "compressedAirOre";
+	public static final String compressedAirOre_NAME = "Compressed Air Ore";
 	
 	//IDs
 	
@@ -30,6 +33,11 @@ public class blockInfo {
 	public static final String lowPressureCompressor_KEY = "Low Pressure Compressor";
 	public static final int lowPressureCompressor_DEFAULT = 2082;
 	
+	//Ore
+	public static int compressedAirOre_ID;
+	public static final String compressedAirOre_KEY = "Compressed Air Ore";
+	public static final int compressedAirOre_DEFAULT = 2083;
+	
 	
 	
 	//Icons
@@ -41,7 +49,16 @@ public class blockInfo {
 	
 	//HPComp
 	public static final String highPressureCompressorTOP = "highPressureCompressor_TOP";
-	public static final String highPressureCompressorBOT = "highPressureCompressor_BOT";
+	public static final String highPressureCompressorBOTTOM = "highPressureCompressor_BOT";
 	public static final String highPressureCompressorSIDE = "highPressureCompressor_SIDE"; 
+	
+	//Ore
+	public static final String compressedAirOreTOP = "compressedAirOre_TOP";
+	public static final String compressedAirOreBOTTOM = "compressedAirOre_BOT";
+	public static final String compressedAirOreSIDE = "compressedAirOre_SIDE"; 
 
+	
+	
+	//TileEntity
+	public static String lowPressureCompressor_TE_KEY = "lowPressureCompressorTileEntity";
 }

@@ -14,7 +14,7 @@ public class itemInfo {
 	
 	//HPC
 	public static final String highPressureCore_UNLOCALIZED_NAME = "highPressureCore";
-	public static final String highPressureCore_NAME = "High Pressure Core";
+	public static final String highPressureCore_NAME = "§9High Pressure Core";
 	
 	//DLPC
 	public static final String defectiveLowPressureCore_UNLOCALIZED_NAME = "defectiveLowPressureCore";
@@ -22,7 +22,7 @@ public class itemInfo {
 	
 	//LPC
 	public static final String lowPressureCore_UNLOCALIZED_NAME = "lowPressureCore";
-	public static final String lowPressureCore_NAME = "Low Pressure Core";
+	public static final String lowPressureCore_NAME = "§9Low Pressure Core";
 	
 	//IronPiece
 	public static final String ironPiece_UNLOCALIZED_NAME = "ironPiece";
@@ -35,6 +35,10 @@ public class itemInfo {
 	//DiamondPiece
 	public static final String diamondPiece_UNLOCALIZED_NAME = "diamondPiece";
 	public static final String diamondPiece_NAME = "Compressed Diamond Piece";
+	
+	//CompressedAir
+	public static final String compressedAir_UNLOCALIZED_NAME = "compressedAir";
+	public static final String compressedAir_NAME = "Compressed Air";
 	
 	
 	
@@ -72,8 +76,13 @@ public class itemInfo {
 	
 	//DiamondPiece
 	public static int diamondPiece_ID;
-	public static final String diamondPiece_KEY = "Compressed Gold Piece";
+	public static final String diamondPiece_KEY = "Compressed Diamond Piece";
 	public static final int diamondPiece_DEFAULT = 10007;
+	
+	//CompressedAir
+	public static int compressedAir_ID;
+	public static final String compressedAir_KEY = "Compressed Air";
+	public static final int compressedAir_DEFAULT = 10008;
 	
 	
 	
@@ -99,4 +108,7 @@ public class itemInfo {
 	
 	//DiamondPiece
 	public static final String diamondPiece_ICON = "diamondPiece";
+	
+	//CompressedAir
+	public static final String compressedAir_ICON = "compressedAir";
 }

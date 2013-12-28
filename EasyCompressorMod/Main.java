@@ -1,10 +1,14 @@
 package EasyCompressorMod;
 
+import net.minecraft.block.Block;
+import net.minecraftforge.common.MinecraftForge;
 import EasyCompressorMod.blocks.blocks;
 import EasyCompressorMod.config.configHandler;
+import EasyCompressorMod.interfaces.guiHandler;
 import EasyCompressorMod.items.items;
 import EasyCompressorMod.network.packetHandler;
 import EasyCompressorMod.proxies.CommonProxy;
+import EasyCompressorMod.world.generationHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -19,6 +23,8 @@ import cpw.mods.fml.common.network.NetworkMod;
 
 
 public class Main {
+	//For Tool
+	public static Block blockCompressedAir;
 	
 
 	@Instance(ModInfo.ID)
@@ -41,12 +47,27 @@ public class Main {
 	
 	@EventHandler
 	public void load(FMLInitializationEvent event) {
+		//Names
 		items.addNames();
 		blocks.addNames();
 		
+		//Recipies
 		items.registerItemRecipes();
 		blocks.registerBlockRecipes();
 		items.registerSmelting();
+		
+		//World Gen
+		new generationHandler();
+		
+		//CompressedAirOre Tool
+		MinecraftForge.setBlockHarvestLevel(blockCompressedAir, "pickaxe", 1);
+	
+		//TileEntity
+		blocks.registerTileEntities();
+		
+		//GUI/Interface
+		new guiHandler();
+	
 	}
 	
 	@EventHandler
