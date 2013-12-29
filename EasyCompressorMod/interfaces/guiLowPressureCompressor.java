@@ -1,6 +1,7 @@
 package EasyCompressorMod.interfaces;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
@@ -31,6 +32,28 @@ public class guiLowPressureCompressor extends GuiContainer{
 		Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
 	    drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
 	
+	}
+	
+	//In the GUI the Top Name
+	@Override
+	protected void drawGuiContainerForegroundLayer(int x, int y) {
+		fontRenderer.drawString("Low Pressure Compressor", 8, 6, 0x404040);
+	}
+	
+	@Override
+	public void initGui() {
+		super.initGui();
+		buttonList.clear();        //ID     Rechts      Unten      Länge/Höhe des Buttons
+		buttonList.add(new GuiButton(0, guiLeft + 75, guiTop + 45, 60, 20, "Compress"));
+	                                                                         //Text im Button
+	}    
+	
+	//Was gemacht wird wenn Button gedrückt wird
+	@Override
+	protected void actionPerformed(GuiButton button) {
+		if(button.id == 0){
+			
+		}
 	}
 
 }

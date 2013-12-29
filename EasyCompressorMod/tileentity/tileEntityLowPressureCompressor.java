@@ -19,10 +19,6 @@ public class tileEntityLowPressureCompressor extends TileEntity implements IInve
 	}
 	
 	
-	
-	
-	
-	
 	@Override
 	public int getSizeInventory() {
 		return items.length;
