@@ -23,7 +23,12 @@ public class configHandler {
 		itemInfo.ironPiece_ID = config.getItem(itemInfo.ironPiece_KEY, itemInfo.ironPiece_DEFAULT).getInt() - 256;
 		itemInfo.goldPiece_ID = config.getItem(itemInfo.goldPiece_KEY, itemInfo.goldPiece_DEFAULT).getInt() - 256;
 		itemInfo.diamondPiece_ID = config.getItem(itemInfo.diamondPiece_KEY, itemInfo.diamondPiece_DEFAULT).getInt() - 256;
+		
 		itemInfo.compressedAir_ID = config.getItem(itemInfo.compressedAir_KEY, itemInfo.compressedAir_DEFAULT).getInt() - 256;
+		
+		itemInfo.betterDiamond_ID = config.getItem(itemInfo.betterDiamond_KEY, itemInfo.betterDiamond_DEFAULT).getInt() - 256;
+		itemInfo.betterIronIngot_ID = config.getItem(itemInfo.betterIronIngot_KEY, itemInfo.betterIronIngot_DEFAULT).getInt() - 256;
+		itemInfo.betterGoldIngot_ID = config.getItem(itemInfo.betterGoldIngot_KEY, itemInfo.betterGoldIngot_DEFAULT).getInt() - 256;
 
 		
 		//Blocks

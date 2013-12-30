@@ -40,6 +40,18 @@ public class itemInfo {
 	public static final String compressedAir_UNLOCALIZED_NAME = "compressedAir";
 	public static final String compressedAir_NAME = "Compressed Air";
 	
+	//BetterDiamond
+	public static final String betterDiamond_UNLOCALIZED_NAME = "betterDiamond";
+	public static final String betterDiamond_NAME = "Better Diamond";
+	
+	//BetterGoldIngot
+	public static final String betterGoldIngot_UNLOCALIZED_NAME = "betterGoldIngot";
+	public static final String betterGoldIngot_NAME = "Better Iron Ingot";
+	
+	//BetterIronIngot
+	public static final String betterIronIngot_UNLOCALIZED_NAME = "betterIronIngot";
+	public static final String betterIronIngot_NAME = "Better Gold Ingot";
+	
 	
 	
 	//IDs
@@ -84,6 +96,21 @@ public class itemInfo {
 	public static final String compressedAir_KEY = "Compressed Air";
 	public static final int compressedAir_DEFAULT = 10008;
 	
+	//BetterDiamond
+	public static int betterDiamond_ID;
+	public static final String betterDiamond_KEY = "Better Diamond";
+	public static final int betterDiamond_DEFAULT = 10009;
+	
+	//BetterIronIngot
+	public static int betterIronIngot_ID;
+	public static final String betterIronIngot_KEY = "Better Iron Ingot";
+	public static final int betterIronIngot_DEFAULT = 10010;
+	
+	//BetterGoldIngot
+	public static int betterGoldIngot_ID;
+	public static final String betterGoldIngot_KEY = "Better Gold Ingot";
+	public static final int betterGoldIngot_DEFAULT = 10011;
+	
 	
 	
 	//Icons
@@ -111,4 +138,13 @@ public class itemInfo {
 	
 	//CompressedAir
 	public static final String compressedAir_ICON = "compressedAir";
+	
+	//BetterDiamond
+	public static final String betterDiamond_ICON = "betterDiamond";
+	
+	//BetterIronIngot
+	public static final String betterIronIngot_ICON = "betterIronIngot";
+	
+	//BetterGoldIngot
+	public static final String betterGoldIngot_ICON = "betterGoldIngot";
 }

@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
@@ -12,8 +13,11 @@ import EasyCompressorMod.tileentity.tileEntityLowPressureCompressor;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+
 @SideOnly(Side.CLIENT)
 public class guiLowPressureCompressor extends GuiContainer{
+	
+	private ItemStack[] items;
 
 	public guiLowPressureCompressor(InventoryPlayer invPlayer, tileEntityLowPressureCompressor lpc) {
 		
@@ -39,6 +43,7 @@ public class guiLowPressureCompressor extends GuiContainer{
 	protected void drawGuiContainerForegroundLayer(int x, int y) {
 		fontRenderer.drawString("Low Pressure Compressor", 8, 6, 0x404040);
 	}
+	/*
 	
 	@Override
 	public void initGui() {
@@ -47,13 +52,14 @@ public class guiLowPressureCompressor extends GuiContainer{
 		buttonList.add(new GuiButton(0, guiLeft + 75, guiTop + 45, 60, 20, "Compress"));
 	                                                                         //Text im Button
 	}    
-	
 	//Was gemacht wird wenn Button gedrückt wird
 	@Override
 	protected void actionPerformed(GuiButton button) {
-		if(button.id == 0){
+		if(button.id == 0){		
 			
 		}
-	}
+	} 
+	
+	*/
 
 }

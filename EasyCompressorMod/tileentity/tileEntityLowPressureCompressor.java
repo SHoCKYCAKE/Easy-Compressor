@@ -2,17 +2,23 @@ package EasyCompressorMod.tileentity;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
-import EasyCompressorMod.items.itemInfo;
 
 public class tileEntityLowPressureCompressor extends TileEntity implements IInventory{
-
-	int Test = 0;
 	
 	private ItemStack[] items;
+	private ItemStack slotIron = new ItemStack(Item.ingotIron);
+	private ItemStack slotGold = new ItemStack(Item.ingotGold);
+	private ItemStack slotDiamond = new ItemStack(Item.diamond);
+	
+	private ItemStack ironPiece = new ItemStack(EasyCompressorMod.items.items.ironPiece);
+	private ItemStack goldPiece = new ItemStack(EasyCompressorMod.items.items.goldPiece);
+	private ItemStack diamondPiece = new ItemStack(EasyCompressorMod.items.items.diamondPiece);
+
 	
 	public tileEntityLowPressureCompressor(){
 		items = new ItemStack[3];
@@ -29,20 +35,21 @@ public class tileEntityLowPressureCompressor extends TileEntity implements IInve
 		return items[i];
 	}
 
-	@Override
-	public ItemStack decrStackSize(int i, int count) {
-		ItemStack itemstack = getStackInSlot(i);
-		
-		if(itemstack != null){
-			if(itemstack.stackSize <= count){
-				Test = count - 1;
-				setInventorySlotContents(i, null);
-			}
-		}
-		return itemstack;
-	}
-
-
+    @Override
+    public ItemStack decrStackSize(int slot, int amt) {
+            ItemStack stack = getStackInSlot(slot);
+            if (stack != null) {
+                    if (stack.stackSize <= amt) {
+                            setInventorySlotContents(slot, null);
+                    } else {
+                            stack = stack.splitStack(amt);
+                            if (stack.stackSize == 0) {
+                                    setInventorySlotContents(slot, null);
+                            }
+                    }
+            }
+            return stack;
+    }
 
 	@Override
 	public ItemStack getStackInSlotOnClosing(int i) {
@@ -59,9 +66,6 @@ public class tileEntityLowPressureCompressor extends TileEntity implements IInve
 		if(itemstack != null && itemstack.stackSize > getInventoryStackLimit()){
 			itemstack.stackSize = getInventoryStackLimit();
 		}
-		
-		onInventoryChanged();
-		
 	}
 
 	@Override
@@ -90,10 +94,11 @@ public class tileEntityLowPressureCompressor extends TileEntity implements IInve
 	@Override
 	public void closeChest() {}
 
-	@Override
-	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
-		return itemstack.itemID == itemInfo.compressedAir_ID;
-	}
+
+    @Override
+    public boolean isItemValidForSlot(int i, ItemStack itemstack) {
+	    return false;
+    }
 	
 	@Override
 	public void writeToNBT(NBTTagCompound compound) {
@@ -131,5 +136,30 @@ public class tileEntityLowPressureCompressor extends TileEntity implements IInve
 			}
 		}
 	}
-
+	
+	@Override
+	public void updateEntity(){
+		if(getStackInSlot(0) == slotIron || getStackInSlot(0) == slotGold || getStackInSlot(0) == slotDiamond){
+			if(getStackInSlot(2) != null && getStackInSlot(0) != null && getStackInSlot(2).stackSize >= getStackInSlot(0).stackSize ){
+				
+				if(getStackInSlot(0) == slotIron){
+					decrStackSize(0, 1);
+					decrStackSize(2, 1);
+				setInventorySlotContents(1, ironPiece);
+				}else if(getStackInSlot(0) == slotGold){
+					decrStackSize(0, 1);
+					decrStackSize(2, 1);
+					setInventorySlotContents(1, goldPiece);
+				}else if(getStackInSlot(0) == slotDiamond){
+					decrStackSize(0, 1);
+					decrStackSize(2, 1);
+					setInventorySlotContents(1, diamondPiece);
+				}else{
+					return;
+				}
+			}else{
+				return;
+			}
+		}
+	}
 }

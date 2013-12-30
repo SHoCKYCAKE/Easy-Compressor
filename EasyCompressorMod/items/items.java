@@ -3,6 +3,14 @@ package EasyCompressorMod.items;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import EasyCompressorMod.items.cores.itemDefectiveHighPressureCore;
+import EasyCompressorMod.items.cores.itemDefectiveLowPressureCore;
+import EasyCompressorMod.items.cores.itemHighPressureCore;
+import EasyCompressorMod.items.cores.itemLowPressureCore;
+import EasyCompressorMod.items.otherStuff.itemCompressedAir;
+import EasyCompressorMod.items.pieces.itemDiamondPiece;
+import EasyCompressorMod.items.pieces.itemGoldPiece;
+import EasyCompressorMod.items.pieces.itemIronPiece;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -20,6 +28,10 @@ public class items {
 	
 	public static Item compressedAir;
 	
+	public static Item betterDiamond;
+	public static Item betterIronIngot;
+	public static Item betterGoldIngot;
+	
 	//Initilize Items
 	public static void init() {
 		
@@ -36,6 +48,12 @@ public class items {
 		
 		//CompressedAir
 		compressedAir = new itemCompressedAir(itemInfo.compressedAir_ID);
+		
+		//BetterIngots
+		betterDiamond = new itemCompressedAir(itemInfo.betterDiamond_ID);
+		betterIronIngot = new itemCompressedAir(itemInfo.betterIronIngot_ID);
+		betterGoldIngot = new itemCompressedAir(itemInfo.betterGoldIngot_ID);
+
 	}
 	
 	
@@ -55,8 +73,11 @@ public class items {
 		
 		//CompressedAir
 		LanguageRegistry.addName(compressedAir, itemInfo.compressedAir_NAME);
-
-
+		
+		//BetterIngots
+		LanguageRegistry.addName(betterDiamond, itemInfo.betterDiamond_NAME);
+		LanguageRegistry.addName(betterIronIngot, itemInfo.betterIronIngot_NAME);
+		LanguageRegistry.addName(betterGoldIngot, itemInfo.betterGoldIngot_NAME);
 	}
 	
 	//Register All Recipies
@@ -111,6 +132,30 @@ public class items {
 								"DDD",
 								
 								'D', items.diamondPiece,
+							 });
+		//betterDiamond <- DiamondPiece
+		GameRegistry.addRecipe(new ItemStack(betterDiamond),
+				new Object[] { 	"DDD",
+								"DDD",
+								"   ",
+								
+								'D', items.diamondPiece,
+							 });
+		//betterIronIngot <- IronPiece
+		GameRegistry.addRecipe(new ItemStack(betterIronIngot),
+				new Object[] { 	"III",
+								"III",
+								"   ",
+								
+								'I', items.ironPiece,
+							 });
+		//betterGoldIngot <- GoldPiece
+		GameRegistry.addRecipe(new ItemStack(betterGoldIngot),
+				new Object[] { 	"GGG",
+								"GGG",
+								"   ",
+								
+								'G', items.goldPiece,
 							 });
 	
 	}

@@ -1,5 +1,6 @@
-package EasyCompressorMod.items;
+package EasyCompressorMod.items.cores;
 
+import EasyCompressorMod.items.itemInfo;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

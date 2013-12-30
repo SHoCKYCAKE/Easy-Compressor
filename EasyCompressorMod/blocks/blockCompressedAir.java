@@ -53,7 +53,7 @@ public class blockCompressedAir extends Block {
 	
 	//What is dropped
 	public int idDropped(int metadate, Random random, int fortune){
-		return itemInfo.compressedAir_DEFAULT;
+		return itemInfo.compressedAir_ID;
 	}
 	
 	//How much is dropped ( 1 = 1 at least ) + (a number between 1-2)
