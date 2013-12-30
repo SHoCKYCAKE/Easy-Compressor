@@ -1,8 +1,10 @@
 package EasyCompressorMod.items;
 
 import net.minecraft.block.Block;
+import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.EnumHelper;
 import EasyCompressorMod.items.cores.itemDefectiveHighPressureCore;
 import EasyCompressorMod.items.cores.itemDefectiveLowPressureCore;
 import EasyCompressorMod.items.cores.itemHighPressureCore;
@@ -11,26 +13,67 @@ import EasyCompressorMod.items.otherStuff.itemCompressedAir;
 import EasyCompressorMod.items.pieces.itemDiamondPiece;
 import EasyCompressorMod.items.pieces.itemGoldPiece;
 import EasyCompressorMod.items.pieces.itemIronPiece;
+import EasyCompressorMod.tools.betterDiamondTools.betterDiamondSword;
+import EasyCompressorMod.tools.betterGoldTools.betterGoldSword;
+import EasyCompressorMod.tools.betterIronTools.betterIronSword;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class items {
+	
+	//For my Tools
+	//Better Iron
+	public static EnumToolMaterial betterIronMaterial = EnumHelper.addToolMaterial("betterIron", 2, 550, 6.2F, 2.5F, 15);
+	
+	//Better Gold
+	public static EnumToolMaterial betterGoldMaterial = EnumHelper.addToolMaterial("betterGold", 0, 65, 13.0F, 0.5F, 22);
+	
+	//Better Diamond
+	public static EnumToolMaterial betterDiamondMaterial = EnumHelper.addToolMaterial("betterDiamond", 3, 3200, 9.5F, 3.4F, 13);
 
 	//Create field for use
+	
+	//Cores
 	public static Item defectiveHighPressureCore;
 	public static Item defectiveLowPressureCore;
 	public static Item lowPressureCore;
 	public static Item highPressureCore;
 	
+	//Pieces
 	public static Item ironPiece;
 	public static Item goldPiece;
 	public static Item diamondPiece;
 	
+	//Ore/Drop
 	public static Item compressedAir;
 	
+	//Ingots
 	public static Item betterDiamond;
 	public static Item betterIronIngot;
 	public static Item betterGoldIngot;
+	
+	//Tools
+	
+	//Iron
+	public static Item betterIronSword;
+	public static Item betterIronPickaxe;
+	public static Item betterIronAxe;
+	public static Item betterIronHoe;
+	public static Item betterIronShovel;
+	
+	//Gold
+	public static Item betterGoldSword;
+	public static Item betterGoldPickaxe;
+	public static Item betterGoldAxe;
+	public static Item betterGoldHoe;
+	public static Item betterGoldShovel;
+	
+	//Diamond
+	public static Item betterDiamondSword;
+	public static Item betterDiamondPickaxe;
+	public static Item betterDiamondAxe;
+	public static Item betterDiamondHoe;
+	public static Item betterDiamondShovel;
 	
 	//Initilize Items
 	public static void init() {
@@ -53,6 +96,29 @@ public class items {
 		betterDiamond = new itemCompressedAir(itemInfo.betterDiamond_ID);
 		betterIronIngot = new itemCompressedAir(itemInfo.betterIronIngot_ID);
 		betterGoldIngot = new itemCompressedAir(itemInfo.betterGoldIngot_ID);
+		
+		//Tools
+
+		//Iron
+		betterIronSword = new betterIronSword(itemInfo.betterIronSword_ID, betterIronMaterial);
+		betterIronPickaxe = new betterIronSword(itemInfo.betterIronPickaxe_ID, betterIronMaterial);
+		betterIronAxe = new betterIronSword(itemInfo.betterIronAxe_ID, betterIronMaterial);
+		betterIronHoe = new betterIronSword(itemInfo.betterIronHoe_ID, betterIronMaterial);
+		betterIronShovel = new betterIronSword(itemInfo.betterIronShovel_ID, betterIronMaterial);
+		
+		//Gold
+		betterGoldSword = new betterGoldSword(itemInfo.betterGoldSword_ID, betterGoldMaterial);
+		betterGoldPickaxe = new betterGoldSword(itemInfo.betterGoldPickaxe_ID, betterGoldMaterial);
+		betterGoldAxe = new betterGoldSword(itemInfo.betterGoldAxe_ID, betterGoldMaterial);
+		betterGoldHoe = new betterGoldSword(itemInfo.betterGoldHoe_ID, betterGoldMaterial);
+		betterGoldShovel = new betterGoldSword(itemInfo.betterGoldShovel_ID, betterGoldMaterial);
+		
+		//Diamond
+		betterDiamondSword = new betterDiamondSword(itemInfo.betterDiamondSword_ID, betterDiamondMaterial);
+		betterDiamondPickaxe = new betterDiamondSword(itemInfo.betterDiamondPickaxe_ID, betterDiamondMaterial);
+		betterDiamondAxe = new betterDiamondSword(itemInfo.betterDiamondAxe_ID, betterDiamondMaterial);
+		betterDiamondHoe = new betterDiamondSword(itemInfo.betterDiamondHoe_ID, betterDiamondMaterial);
+		betterDiamondShovel = new betterDiamondSword(itemInfo.betterDiamondShovel_ID, betterDiamondMaterial);
 
 	}
 	
@@ -78,6 +144,30 @@ public class items {
 		LanguageRegistry.addName(betterDiamond, itemInfo.betterDiamond_NAME);
 		LanguageRegistry.addName(betterIronIngot, itemInfo.betterIronIngot_NAME);
 		LanguageRegistry.addName(betterGoldIngot, itemInfo.betterGoldIngot_NAME);
+		
+		//Tools
+		
+		//Iron
+		LanguageRegistry.addName(betterIronSword, itemInfo.betterIronSword_NAME);
+		LanguageRegistry.addName(betterIronPickaxe, itemInfo.betterIronPickaxe_NAME);
+		LanguageRegistry.addName(betterIronAxe, itemInfo.betterIronAxe_NAME);
+		LanguageRegistry.addName(betterIronHoe, itemInfo.betterIronHoe_NAME);
+		LanguageRegistry.addName(betterIronShovel, itemInfo.betterIronShovel_NAME);
+		
+		//Gold
+		LanguageRegistry.addName(betterGoldSword, itemInfo.betterGoldSword_NAME);
+		LanguageRegistry.addName(betterGoldPickaxe, itemInfo.betterGoldPickaxe_NAME);
+		LanguageRegistry.addName(betterGoldAxe, itemInfo.betterGoldAxe_NAME);
+		LanguageRegistry.addName(betterGoldHoe, itemInfo.betterGoldHoe_NAME);
+		LanguageRegistry.addName(betterGoldShovel, itemInfo.betterGoldShovel_NAME);
+		
+		//Diamond
+		LanguageRegistry.addName(betterDiamondSword, itemInfo.betterDiamondSword_NAME);
+		LanguageRegistry.addName(betterDiamondPickaxe, itemInfo.betterDiamondPickaxe_NAME);
+		LanguageRegistry.addName(betterDiamondAxe, itemInfo.betterDiamondAxe_NAME);
+		LanguageRegistry.addName(betterDiamondHoe, itemInfo.betterDiamondHoe_NAME);
+		LanguageRegistry.addName(betterDiamondShovel, itemInfo.betterDiamondShovel_NAME);
+		
 	}
 	
 	//Register All Recipies
@@ -157,6 +247,155 @@ public class items {
 								
 								'G', items.goldPiece,
 							 });
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+		//Tools
+		
+		//Iron
+		
+		//Sword
+		GameRegistry.addRecipe(new ItemStack(betterIronSword),
+				new Object[] { 	" I ",
+								" I ",
+								" S ",
+								
+								'I', items.betterIronIngot,
+								'S', Item.stick,
+							 });
+		//Pickaxe
+		GameRegistry.addRecipe(new ItemStack(betterIronPickaxe),
+				new Object[] { 	"III",
+								" S ",
+								" S ",
+								
+								'I', items.betterIronIngot,
+								'S', Item.stick,
+							 });
+		//Axe
+		GameRegistry.addRecipe(new ItemStack(betterIronAxe),
+				new Object[] { 	"II ",
+								"IS ",
+								" S ",
+								
+								'I', items.betterIronIngot,
+								'S', Item.stick,
+							 });
+		//Hoe
+		GameRegistry.addRecipe(new ItemStack(betterIronHoe),
+				new Object[] { 	"II ",
+								" S ",
+								" S ",
+								
+								'I', items.betterIronIngot,
+								'S', Item.stick,
+							 });
+		//Shovel
+		GameRegistry.addRecipe(new ItemStack(betterIronShovel),
+				new Object[] { 	" I ",
+								" S ",
+								" S ",
+								
+								'I', items.betterIronIngot,
+								'S', Item.stick,
+							 });
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
+		
+		//Gold
+		
+		//Sword
+		GameRegistry.addRecipe(new ItemStack(betterGoldSword),
+				new Object[] { 	" I ",
+								" I ",
+								" S ",
+								
+								'I', items.betterGoldIngot,
+								'S', Item.stick,
+							 });
+		//Pickaxe
+		GameRegistry.addRecipe(new ItemStack(betterGoldPickaxe),
+				new Object[] { 	"III",
+								" S ",
+								" S ",
+								
+								'I', items.betterGoldIngot,
+								'S', Item.stick,
+							 });
+		//Axe
+		GameRegistry.addRecipe(new ItemStack(betterGoldAxe),
+				new Object[] { 	"II ",
+								"IS ",
+								" S ",
+								
+								'I', items.betterGoldIngot,
+								'S', Item.stick,
+							 });
+		//Hoe
+		GameRegistry.addRecipe(new ItemStack(betterGoldHoe),
+				new Object[] { 	"II ",
+								" S ",
+								" S ",
+								
+								'I', items.betterGoldIngot,
+								'S', Item.stick,
+							 });
+		//Shovel
+		GameRegistry.addRecipe(new ItemStack(betterGoldShovel),
+				new Object[] { 	" I ",
+								" S ",
+								" S ",
+								
+								'I', items.betterGoldIngot,
+								'S', Item.stick,
+							 });
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------
+		//Diamond
+		
+		//Sword
+		GameRegistry.addRecipe(new ItemStack(betterDiamondSword),
+				new Object[] { 	" I ",
+								" I ",
+								" S ",
+								
+								'I', items.betterDiamond,
+								'S', Item.stick,
+							 });
+		//Pickaxe
+		GameRegistry.addRecipe(new ItemStack(betterDiamondPickaxe),
+				new Object[] { 	"III",
+								" S ",
+								" S ",
+								
+								'I', items.betterDiamond,
+								'S', Item.stick,
+							 });
+		//Axe
+		GameRegistry.addRecipe(new ItemStack(betterDiamondAxe),
+				new Object[] { 	"II ",
+								"IS ",
+								" S ",
+								
+								'I', items.betterDiamond,
+								'S', Item.stick,
+							 });
+		//Hoe
+		GameRegistry.addRecipe(new ItemStack(betterDiamondHoe),
+				new Object[] { 	"II ",
+								" S ",
+								" S ",
+								
+								'I', items.betterDiamond,
+								'S', Item.stick,
+							 });
+		//Shovel
+		GameRegistry.addRecipe(new ItemStack(betterDiamondShovel),
+				new Object[] { 	" I ",
+								" S ",
+								" S ",
+								
+								'I', items.betterDiamond,
+								'S', Item.stick,
+							 });
+
 	
 	}
 	

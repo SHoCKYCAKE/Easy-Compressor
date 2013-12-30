@@ -1,5 +1,25 @@
 package EasyCompressorMod.tools.betterGoldTools;
 
-public class betterGoldHoe {
+import EasyCompressorMod.items.itemInfo;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.ItemHoe;
+
+public class betterGoldHoe extends ItemHoe {
+
+	public betterGoldHoe(int par1, EnumToolMaterial par2EnumToolMaterial) {
+		super(par1, par2EnumToolMaterial);
+		setCreativeTab(CreativeTabs.tabTools);
+		setMaxStackSize(1);
+		setUnlocalizedName(itemInfo.betterGoldHoe_UNLOCALIZED_NAME);
+	}
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister register) {
+		itemIcon = register.registerIcon(itemInfo.TEXTURE_LOC + ":" + itemInfo.betterGoldHoe_ICON);
+	}
 
 }
