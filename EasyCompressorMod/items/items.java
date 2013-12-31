@@ -400,7 +400,7 @@ public class items {
 	}
 	
 	//Register all Smelting Recipies
-	public static void registerSmelting(){
+	public static void registerItemSmelting(){
 		
 		GameRegistry.addSmelting(itemInfo.defectiveLowPressureCore_DEFAULT, new ItemStack(items.lowPressureCore), 0.1f);
 

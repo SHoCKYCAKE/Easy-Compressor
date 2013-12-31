@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import EasyCompressorMod.items.itemBLOCKS;
+import EasyCompressorMod.items.itemInfo;
 import EasyCompressorMod.items.items;
 import EasyCompressorMod.tileentity.tileEntityLowPressureCompressor;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -14,6 +15,9 @@ public class blocks {
 	public static Block blockLowPressureCompressor;
 	public static Block blockHighPressureCompressor;
 	public static Block blockCompressedAir;
+	public static Block blockMyLeaf;
+	public static Block blockMyWood;
+	public static Block blockMySapling;
 	public static Item itemLowPressureCore;
 	public static Item itemHighPressureCore;
 	
@@ -34,6 +38,15 @@ public class blocks {
 		blockCompressedAir = new blockCompressedAir(blockInfo.compressedAirOre_ID);
 		GameRegistry.registerBlock(blockCompressedAir, itemBLOCKS.class, blockInfo.compressedAirOre_KEY);
 		
+		blockMyLeaf = new blockMyLeaf(blockInfo.myLeaf_ID);
+		GameRegistry.registerBlock(blockMyLeaf, itemBLOCKS.class, blockInfo.myLeaf_KEY);
+		
+		blockMyWood = new blockMyLeaf(blockInfo.myWood_ID);
+		GameRegistry.registerBlock(blockMyWood, itemBLOCKS.class, blockInfo.myWood_KEY);
+		
+		blockMySapling = new blockMyLeaf(blockInfo.mySapling_ID);
+		GameRegistry.registerBlock(blockMySapling, itemBLOCKS.class, blockInfo.mySapling_KEY);
+	
 	}
 	
 	//Add all Names 
@@ -43,6 +56,13 @@ public class blocks {
 		LanguageRegistry.addName(blockLowPressureCompressor, blockInfo.lowPressureCompressor_NAME);
 		
 		LanguageRegistry.addName(blockCompressedAir, blockInfo.compressedAirOre_NAME);
+
+		LanguageRegistry.addName(blockMyLeaf, blockInfo.myLeaf_NAME);
+		
+		LanguageRegistry.addName(blockMyWood, blockInfo.myWood_NAME);
+		
+		LanguageRegistry.addName(blockMySapling, blockInfo.mySapling_NAME);
+
 
 	}
 	
@@ -68,6 +88,12 @@ public class blocks {
 								'P', Block.pistonBase,
 								'C', items.highPressureCore,
 							 });	
+	}
+	//Register all Smelting Recipies
+	public static void registerBlockSmelting(){
+		
+		GameRegistry.addSmelting(blockInfo.myWood_ID, new ItemStack(items.compressedAir), 0.1f);
+
 	}
 	
 }

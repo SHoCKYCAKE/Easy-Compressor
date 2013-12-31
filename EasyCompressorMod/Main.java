@@ -1,18 +1,15 @@
 package EasyCompressorMod;
 
 import net.minecraft.block.Block;
-import net.minecraft.item.EnumToolMaterial;
-import net.minecraft.item.Item;
-import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import EasyCompressorMod.blocks.blocks;
 import EasyCompressorMod.config.configHandler;
 import EasyCompressorMod.interfaces.guiHandler;
-import EasyCompressorMod.items.itemInfo;
 import EasyCompressorMod.items.items;
 import EasyCompressorMod.network.packetHandler;
 import EasyCompressorMod.proxies.CommonProxy;
 import EasyCompressorMod.world.generationHandler;
+import EasyCompressorMod.world.treeGenerationHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -57,11 +54,18 @@ public class Main {
 		
 		//Recipies
 		items.registerItemRecipes();
+		items.registerItemSmelting();
+		
 		blocks.registerBlockRecipes();
-		items.registerSmelting();
+		blocks.registerBlockSmelting();
 		
 		//World Gen
+		
+		//Ore
 		new generationHandler();
+		
+		//Trees
+		new treeGenerationHandler();
 		
 		//CompressedAirOre Tool
 		MinecraftForge.setBlockHarvestLevel(blockCompressedAir, "pickaxe", 1);
