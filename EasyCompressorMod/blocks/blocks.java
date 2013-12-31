@@ -1,10 +1,11 @@
 package EasyCompressorMod.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import EasyCompressorMod.items.itemBLOCKS;
-import EasyCompressorMod.items.itemInfo;
 import EasyCompressorMod.items.items;
 import EasyCompressorMod.tileentity.tileEntityLowPressureCompressor;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -37,14 +38,15 @@ public class blocks {
 		
 		blockCompressedAir = new blockCompressedAir(blockInfo.compressedAirOre_ID);
 		GameRegistry.registerBlock(blockCompressedAir, itemBLOCKS.class, blockInfo.compressedAirOre_KEY);
+		MinecraftForge.setBlockHarvestLevel(blockCompressedAir, "pickaxe", 1);
 		
-		blockMyLeaf = new blockMyLeaf(blockInfo.myLeaf_ID);
+		blockMyLeaf = new blockMyLeaf(blockInfo.myLeaf_ID, Material.leaves, false);
 		GameRegistry.registerBlock(blockMyLeaf, itemBLOCKS.class, blockInfo.myLeaf_KEY);
 		
-		blockMyWood = new blockMyLeaf(blockInfo.myWood_ID);
+		blockMyWood = new blockMyWood(blockInfo.myWood_ID);
 		GameRegistry.registerBlock(blockMyWood, itemBLOCKS.class, blockInfo.myWood_KEY);
 		
-		blockMySapling = new blockMyLeaf(blockInfo.mySapling_ID);
+		blockMySapling = new blockMySapling(blockInfo.mySapling_ID, Material.leaves);
 		GameRegistry.registerBlock(blockMySapling, itemBLOCKS.class, blockInfo.mySapling_KEY);
 	
 	}

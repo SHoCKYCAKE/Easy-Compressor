@@ -1,7 +1,5 @@
 package EasyCompressorMod;
 
-import net.minecraft.block.Block;
-import net.minecraftforge.common.MinecraftForge;
 import EasyCompressorMod.blocks.blocks;
 import EasyCompressorMod.config.configHandler;
 import EasyCompressorMod.interfaces.guiHandler;
@@ -24,10 +22,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 
 
 public class Main {
-	//For Harvest
-	public static Block blockCompressedAir;
 	
-
 	@Instance(ModInfo.ID)
 	public static Main instance;
 
@@ -67,8 +62,6 @@ public class Main {
 		//Trees
 		new treeGenerationHandler();
 		
-		//CompressedAirOre Tool
-		MinecraftForge.setBlockHarvestLevel(blockCompressedAir, "pickaxe", 1);
 	
 		//TileEntity
 		blocks.registerTileEntities();

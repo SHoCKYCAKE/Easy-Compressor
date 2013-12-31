@@ -2,9 +2,8 @@ package EasyCompressorMod.blocks;
 
 import java.util.Random;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockFlower;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.Icon;
@@ -13,18 +12,21 @@ import net.minecraft.world.gen.feature.WorldGenBigTree;
 import net.minecraft.world.gen.feature.WorldGenForest;
 import net.minecraft.world.gen.feature.WorldGenHugeTrees;
 import net.minecraft.world.gen.feature.WorldGenTaiga2;
-import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.TerrainGen;
+import EasyCompressorMod.world.worldGenTree;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class blockMySapling extends BlockFlower{
 	
-	public blockMySapling(int id) {
-		super(id);
+	public blockMySapling(int id, Material par2Material) {
+		super(id, par2Material);
         float f = 0.4F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
         this.setCreativeTab(CreativeTabs.tabDecorations);
         this.setUnlocalizedName(blockInfo.mySapling_UNLOCALIZED_NAME);
+        this.setStepSound(soundGrassFootstep);
 	}
 	
     public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
@@ -64,49 +66,18 @@ public class blockMySapling extends BlockFlower{
         int j1 = 0;
         boolean flag = false;
 
-        if (l == 1)
+        if (l == 3)
         {
-            object = new WorldGenTaiga2(true);
-        }
-        else if (l == 2)
-        {
-            object = new WorldGenForest(true);
-        }
-        else if (l == 3)
-        {
-            for (i1 = 0; i1 >= -1; --i1)
-            {
-                for (j1 = 0; j1 >= -1; --j1)
-                {
-                    if (this.isSameSapling(par1World, par2 + i1, par3, par4 + j1, 3) && this.isSameSapling(par1World, par2 + i1 + 1, par3, par4 + j1, 3) && this.isSameSapling(par1World, par2 + i1, par3, par4 + j1 + 1, 3) && this.isSameSapling(par1World, par2 + i1 + 1, par3, par4 + j1 + 1, 3))
-                    {
-                        object = new WorldGenHugeTrees(true, 10 + par5Random.nextInt(20), 3, 3);
-                        flag = true;
-                        break;
-                    }
-                }
-
-                if (object != null)
-                {
-                    break;
-                }
-            }
-
             if (object == null)
             {
                 j1 = 0;
                 i1 = 0;
-                object = new WorldGenTrees(true, 4 + par5Random.nextInt(7), 3, 3, false);
+                object = new worldGenTree(true, 4 + par5Random.nextInt(7), 3, 3, false);
             }
         }
         else
         {
-            object = new WorldGenTrees(true);
-
-            if (par5Random.nextInt(10) == 0)
-            {
-                object = new WorldGenBigTree(true);
-            }
+            object = new worldGenTree(true);
         }
 
         if (flag)

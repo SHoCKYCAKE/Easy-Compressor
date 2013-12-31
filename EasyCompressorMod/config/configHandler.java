@@ -58,19 +58,16 @@ public class configHandler {
 		itemInfo.betterDiamondHoe_ID = config.getItem(itemInfo.betterDiamondHoe_KEY, itemInfo.betterDiamondHoe_DEFAULT).getInt() - 256;
 		itemInfo.betterDiamondShovel_ID = config.getItem(itemInfo.betterDiamondShovel_KEY, itemInfo.betterDiamondShovel_DEFAULT).getInt() - 256;
 		
+ 
 		
 		
-		
-		
-		
-		//Blocks
+       	//Blocks
 		blockInfo.highPressureCompressor_ID = config.getBlock(blockInfo.highPressureCompressor_KEY, blockInfo.highPressureCompressor_DEFAULT).getInt();
 		blockInfo.lowPressureCompressor_ID = config.getBlock(blockInfo.lowPressureCompressor_KEY, blockInfo.lowPressureCompressor_DEFAULT).getInt();
 		blockInfo.compressedAirOre_ID = config.getBlock(blockInfo.compressedAirOre_KEY, blockInfo.compressedAirOre_DEFAULT).getInt();
 		blockInfo.myLeaf_ID = config.getBlock(blockInfo.myLeaf_KEY, blockInfo.myLeaf_DEFAULT).getInt();
 		blockInfo.myWood_ID = config.getBlock(blockInfo.myWood_KEY, blockInfo.myWood_DEFAULT).getInt();
 		blockInfo.mySapling_ID = config.getBlock(blockInfo.mySapling_KEY, blockInfo.mySapling_DEFAULT).getInt();
-		
 		
 		config.save();
 		

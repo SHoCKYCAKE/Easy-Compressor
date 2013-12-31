@@ -4,27 +4,30 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLeavesBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
+import net.minecraftforge.common.IShearable;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class blockMyLeaf extends Block {
+public class blockMyLeaf extends BlockLeavesBase implements IShearable{
+	
+    public boolean graphicsLevel;
 
-	public blockMyLeaf(int id) {
-		super(id, Material.leaves);
-		
+    protected blockMyLeaf(int par1, Material par2Material, boolean par3){
+        super(par1, par2Material, par3);
+        this.graphicsLevel = par3;
 		setCreativeTab(CreativeTabs.tabDecorations);
 		setHardness(0.2F);
 		setStepSound(Block.soundGrassFootstep);
 		setLightOpacity(1);
 		setUnlocalizedName(blockInfo.myLeaf_UNLOCALIZED_NAME);
 	}
-	
 
 	@SideOnly(Side.CLIENT)
 	private Icon topIcon;
@@ -87,6 +90,15 @@ public class blockMyLeaf extends Block {
     public boolean isLeaves(World world, int x, int y, int z)
     {
         return true;
+    }
+    private void removeLeaves(World par1World, int par2, int par3, int par4)
+    {
+        this.dropBlockAsItem(par1World, par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4), 0);
+        par1World.setBlockToAir(par2, par3, par4);
+    }
+    public boolean isOpaqueCube()
+    {
+        return !this.graphicsLevel;
     }
 
 }
