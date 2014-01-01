@@ -58,7 +58,25 @@ public class configHandler {
 		itemInfo.betterDiamondHoe_ID = config.getItem(itemInfo.betterDiamondHoe_KEY, itemInfo.betterDiamondHoe_DEFAULT).getInt() - 256;
 		itemInfo.betterDiamondShovel_ID = config.getItem(itemInfo.betterDiamondShovel_KEY, itemInfo.betterDiamondShovel_DEFAULT).getInt() - 256;
 		
- 
+		//Armor
+		
+		//Iron
+		itemInfo.betterIronHelmet_ID = config.getItem(itemInfo.betterIronHelmet_KEY, itemInfo.betterIronHelmet_DEFAULT).getInt() - 256;
+		itemInfo.betterIronChestplate_ID = config.getItem(itemInfo.betterIronChestplate_KEY, itemInfo.betterIronChestplate_DEFAULT).getInt() - 256;
+		itemInfo.betterIronLeggings_ID = config.getItem(itemInfo.betterIronLeggings_KEY, itemInfo.betterIronLeggings_DEFAULT).getInt() - 256;
+		itemInfo.betterIronBoots_ID = config.getItem(itemInfo.betterIronBoots_KEY, itemInfo.betterIronBoots_DEFAULT).getInt() - 256; 
+		
+		//Gold
+		itemInfo.betterGoldHelmet_ID = config.getItem(itemInfo.betterGoldHelmet_KEY, itemInfo.betterGoldHelmet_DEFAULT).getInt() - 256;
+		itemInfo.betterGoldChestplate_ID = config.getItem(itemInfo.betterGoldChestplate_KEY, itemInfo.betterGoldChestplate_DEFAULT).getInt() - 256;
+		itemInfo.betterGoldLeggings_ID = config.getItem(itemInfo.betterGoldLeggings_KEY, itemInfo.betterGoldLeggings_DEFAULT).getInt() - 256;
+		itemInfo.betterGoldBoots_ID = config.getItem(itemInfo.betterGoldBoots_KEY, itemInfo.betterGoldBoots_DEFAULT).getInt() - 256; 
+		
+		//Diamond
+		itemInfo.betterDiamondHelmet_ID = config.getItem(itemInfo.betterDiamondHelmet_KEY, itemInfo.betterDiamondHelmet_DEFAULT).getInt() - 256;
+		itemInfo.betterDiamondChestplate_ID = config.getItem(itemInfo.betterDiamondChestplate_KEY, itemInfo.betterDiamondChestplate_DEFAULT).getInt() - 256;
+		itemInfo.betterDiamondLeggings_ID = config.getItem(itemInfo.betterDiamondLeggings_KEY, itemInfo.betterDiamondLeggings_DEFAULT).getInt() - 256;
+		itemInfo.betterDiamondBoots_ID = config.getItem(itemInfo.betterDiamondBoots_KEY, itemInfo.betterDiamondBoots_DEFAULT).getInt() - 256; 
 		
 		
        	//Blocks

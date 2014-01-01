@@ -1,6 +1,5 @@
 package EasyCompressorMod.tileentity;
 
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
@@ -9,16 +8,24 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 
-public class tileEntityLowPressureCompressor extends TileEntity implements IInventory{
+public class tileEntityHighPressureCompressor extends TileEntity implements IInventory{
 	
 	private ItemStack[] items;
 	
-	private ItemStack obsi = new ItemStack(Block.obsidian);
-	private ItemStack core = new ItemStack(EasyCompressorMod.items.items.highPressureCore);
+	private int stackSize = 0;
 	
-	public tileEntityLowPressureCompressor(){
+	public static Item ironPiece;
+	public static Item goldPiece;
+	public static Item diamondPiece;
+	
+	ItemStack ironPieceTest = new ItemStack(EasyCompressorMod.items.items.ironPiece);
+	ItemStack goldPieceTest = new ItemStack(EasyCompressorMod.items.items.goldPiece);
+    ItemStack diamondPieceTest = new ItemStack(EasyCompressorMod.items.items.diamondPiece);
+	
+	public tileEntityHighPressureCompressor(){
 		items = new ItemStack[3];
 	}
+	
 	
 	@Override
 	public int getSizeInventory() {
@@ -65,7 +72,7 @@ public class tileEntityLowPressureCompressor extends TileEntity implements IInve
 
 	@Override
 	public String getInvName() {
-		return "Compressor/Low";
+		return "Compressor/High";
 	}
 
 	@Override
@@ -131,40 +138,54 @@ public class tileEntityLowPressureCompressor extends TileEntity implements IInve
 			}
 		}
 	}
+	
 	@Override
 	public void updateEntity(){
 		if(worldObj.isRemote == false && getStackInSlot(2) != null && getStackInSlot(0) != null && getStackInSlot(2).stackSize >= 1 && getStackInSlot(0).stackSize >= 1){
-			if(getStackInSlot(0).itemID == EasyCompressorMod.items.itemInfo.defectiveHighPressureCore_ID || getStackInSlot(0).itemID == Block.wood.blockID){
+			if(getStackInSlot(0).itemID == Item.ingotIron.itemID || getStackInSlot(0).itemID == Item.ingotGold.itemID || getStackInSlot(0).itemID == Item.diamond.itemID){
 					
-				if(getStackInSlot(0).itemID == Block.wood.blockID){
-					if(getStackInSlot(2).stackSize >= 2 && getStackInSlot(0).stackSize >= 4){
+				if(getStackInSlot(0).itemID == Item.ingotIron.itemID){
 
 					if(getStackInSlot(1) == null){
-						decrStackSize(0, 4);
-						decrStackSize(2, 2);
-						setInventorySlotContents(1, obsi);
+						decrStackSize(0, 1);
+						decrStackSize(2, 1);
+						setInventorySlotContents(1, ironPieceTest);
 						items[1].stackSize++;
 					}else if(getStackInSlot(1).stackSize <= 64){
-						decrStackSize(0, 4);
-						decrStackSize(2, 2);
-						items[1].stackSize++;	
+						decrStackSize(0, 1);
+						decrStackSize(2, 1);
+						items[1].stackSize++;
 					}
-				}else if(getStackInSlot(0).itemID == EasyCompressorMod.items.items.defectiveHighPressureCore.itemID){
-					if(getStackInSlot(2).stackSize >= 16){
-						if(getStackInSlot(1) == null){
-							decrStackSize(0, 1);
-							decrStackSize(2, 16);
-							setInventorySlotContents(1, core);
-							items[1].stackSize++;
-						}else if(getStackInSlot(1).stackSize <= 64){
-							decrStackSize(0, 1);
-							decrStackSize(2, 16);
-							items[1].stackSize++;
-							}
-					    }
+				}else if(getStackInSlot(0).itemID == Item.ingotGold.itemID){
+					if(getStackInSlot(1) == null){
+						decrStackSize(0, 1);
+						decrStackSize(2, 1);
+						setInventorySlotContents(1, goldPieceTest);
+						items[1].stackSize++;
+					}else if(getStackInSlot(1).stackSize <= 64){
+						decrStackSize(0, 1);
+						decrStackSize(2, 1);
+						items[1].stackSize++;
+						}
+				}else if(getStackInSlot(0).itemID == Item.diamond.itemID){
+					if(getStackInSlot(1) == null){
+						decrStackSize(0, 1);
+						decrStackSize(2, 1);
+						setInventorySlotContents(1, diamondPieceTest);
+						items[1].stackSize++;
+					}else if(getStackInSlot(1).stackSize <= 64){
+						decrStackSize(0, 1);
+						decrStackSize(2, 1);
+						items[1].stackSize++;
 					}
+				}else{
+			       return;
 				}
+			}else{
+			   return;
 			}
 		}
 	}
 }
+
+

@@ -14,7 +14,7 @@ public class itemInfo {
 	
 	//HPC
 	public static final String highPressureCore_UNLOCALIZED_NAME = "highPressureCore";
-	public static final String highPressureCore_NAME = "§9High Pressure Core";
+	public static final String highPressureCore_NAME = "High Pressure Core";
 	
 	//DLPC
 	public static final String defectiveLowPressureCore_UNLOCALIZED_NAME = "defectiveLowPressureCore";
@@ -22,7 +22,7 @@ public class itemInfo {
 	
 	//LPC
 	public static final String lowPressureCore_UNLOCALIZED_NAME = "lowPressureCore";
-	public static final String lowPressureCore_NAME = "§9Low Pressure Core";
+	public static final String lowPressureCore_NAME = "Low Pressure Core";
 	
 	//IronPiece
 	public static final String ironPiece_UNLOCALIZED_NAME = "ironPiece";
@@ -104,6 +104,46 @@ public class itemInfo {
 	public static final String betterDiamondShovel_NAME = "Better Diamond Shovel";
 	
 	
+	//Armor
+	
+	//Iron
+	public static final String betterIronHelmet_UNLOCALIZED_NAME = "betterIronHelmet";
+	public static final String betterIronHelmet_NAME = "Better Iron Helmet";
+
+	public static final String betterIronChestplate_UNLOCALIZED_NAME = "betterIronChestplate";
+	public static final String betterIronChestplate_NAME = "Better Iron Chestplate";
+	
+	public static final String betterIronLeggings_UNLOCALIZED_NAME = "betterIronLeggings";
+	public static final String betterIronLeggings_NAME = "Better Iron Leggings";
+	
+	public static final String betterIronBoots_UNLOCALIZED_NAME = "betterIronBoots";
+	public static final String betterIronBoots_NAME = "Better Iron Boots";
+	
+	//Gold
+	public static final String betterGoldHelmet_UNLOCALIZED_NAME = "betterGoldHelmet";
+	public static final String betterGoldHelmet_NAME = "Better Gold Helmet";
+
+	public static final String betterGoldChestplate_UNLOCALIZED_NAME = "betterGoldChestplate";
+	public static final String betterGoldChestplate_NAME = "Better Gold Chestplate";
+	
+	public static final String betterGoldLeggings_UNLOCALIZED_NAME = "betterGoldLeggings";
+	public static final String betterGoldLeggings_NAME = "Better Gold Leggings";
+	
+	public static final String betterGoldBoots_UNLOCALIZED_NAME = "betterGoldBoots";
+	public static final String betterGoldBoots_NAME = "Better Gold Boots";
+	
+	//Diamond
+	public static final String betterDiamondHelmet_UNLOCALIZED_NAME = "betterDiamondHelmet";
+	public static final String betterDiamondHelmet_NAME = "Better Diamond Helmet";
+
+	public static final String betterDiamondChestplate_UNLOCALIZED_NAME = "betterDiamondChestplate";
+	public static final String betterDiamondChestplate_NAME = "Better Diamond Chestplate";
+	
+	public static final String betterDiamondLeggings_UNLOCALIZED_NAME = "betterDiamondLeggings";
+	public static final String betterDiamondLeggings_NAME = "Better Diamond Leggings";
+	
+	public static final String betterDiamondBoots_UNLOCALIZED_NAME = "betterDiamondBoots";
+	public static final String betterDiamondBoots_NAME = "Better Diamond Boots";
 	
 	
 	//IDs
@@ -230,6 +270,60 @@ public class itemInfo {
 	public static final int betterDiamondShovel_DEFAULT = 10026;
 	
 	
+	//Armor
+	
+	//Iron
+	public static int betterIronHelmet_ID;
+	public static final String betterIronHelmet_KEY = "Better Iron Helmet";
+	public static final int betterIronHelmet_DEFAULT = 10027;
+	
+	public static int betterIronChestplate_ID;
+	public static final String betterIronChestplate_KEY = "Better Iron Chestplate";
+	public static final int betterIronChestplate_DEFAULT = 10028;
+	
+	public static int betterIronLeggings_ID;
+	public static final String betterIronLeggings_KEY = "Better Iron Leggings";
+	public static final int betterIronLeggings_DEFAULT = 10029;
+	
+	public static int betterIronBoots_ID;
+	public static final String betterIronBoots_KEY = "Better Iron Boots";
+	public static final int betterIronBoots_DEFAULT = 10030;
+	
+	//Gold
+	public static int betterGoldHelmet_ID;
+	public static final String betterGoldHelmet_KEY = "Better Gold Helmet";
+	public static final int betterGoldHelmet_DEFAULT = 10031;
+	
+	public static int betterGoldChestplate_ID;
+	public static final String betterGoldChestplate_KEY = "Better Gold Chestplate";
+	public static final int betterGoldChestplate_DEFAULT = 10032;
+	
+	public static int betterGoldLeggings_ID;
+	public static final String betterGoldLeggings_KEY = "Better Gold Leggings";
+	public static final int betterGoldLeggings_DEFAULT = 10033;
+	
+	public static int betterGoldBoots_ID;
+	public static final String betterGoldBoots_KEY = "Better Gold Boots";
+	public static final int betterGoldBoots_DEFAULT = 10034;
+	
+	//Diamond
+	public static int betterDiamondHelmet_ID;
+	public static final String betterDiamondHelmet_KEY = "Better Diamond Helmet";
+	public static final int betterDiamondHelmet_DEFAULT = 10035;
+	
+	public static int betterDiamondChestplate_ID;
+	public static final String betterDiamondChestplate_KEY = "Better Diamond Chestplate";
+	public static final int betterDiamondChestplate_DEFAULT = 10036;
+	
+	public static int betterDiamondLeggings_ID;
+	public static final String betterDiamondLeggings_KEY = "Better Diamond Leggings";
+	public static final int betterDiamondLeggings_DEFAULT = 10037;
+	
+	public static int betterDiamondBoots_ID;
+	public static final String betterDiamondBoots_KEY = "Better Diamond Boots";
+	public static final int betterDiamondBoots_DEFAULT = 10038;
+	
+	
 	//Icons
 	
 	//DHPC
@@ -289,4 +383,24 @@ public class itemInfo {
 	public static final String betterDiamondHoe_ICON = "betterDiamondHoe";
 	public static final String betterDiamondShovel_ICON = "betterDiamondShovel";
 	
+	
+	//Armor
+	
+	//Iron
+	public static final String betterIronHelmet_ICON = "betterIronHelmet";
+	public static final String betterIronChestplate_ICON = "betterIronChestplate";
+	public static final String betterIronLeggings_ICON = "betterIronLeggings";
+	public static final String betterIronBoots_ICON = "betterIronBoots";
+	
+	//Gold
+	public static final String betterGoldHelmet_ICON = "betterGoldHelmet";
+	public static final String betterGoldChestplate_ICON = "betterGoldChestplate";
+	public static final String betterGoldLeggings_ICON = "betterGoldLeggings";
+	public static final String betterGoldBoots_ICON = "betterGoldBoots";
+	
+	//Diamond
+	public static final String betterDiamondHelmet_ICON = "betterDiamondHelmet";
+	public static final String betterDiamondChestplate_ICON = "betterDiamondChestplate";
+	public static final String betterDiamondLeggings_ICON = "betterDiamondLeggings";
+	public static final String betterDiamondBoots_ICON = "betterDiamondBoots";
 }

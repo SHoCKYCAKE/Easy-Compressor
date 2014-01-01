@@ -6,15 +6,14 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import EasyCompressorMod.tileentity.tileEntityHighPressureCompressor;
-import EasyCompressorMod.tileentity.tileEntityLowPressureCompressor;
 
 
-public class containerLowPressureCompressor extends Container{
+public class containerHighPressureCompressor extends Container{
 	
-	private tileEntityLowPressureCompressor lpc;
+	private tileEntityHighPressureCompressor hpc;
 
-	public containerLowPressureCompressor(InventoryPlayer invPlayer, tileEntityLowPressureCompressor lpc){
-		this.lpc = lpc;
+	public containerHighPressureCompressor(InventoryPlayer invPlayer, tileEntityHighPressureCompressor hpc){
+		this.hpc = hpc;
 		
 		//HOTBAR
 		for (int x = 0; x < 9; x++) {
@@ -28,15 +27,15 @@ public class containerLowPressureCompressor extends Container{
 			}
 		}
 		//SLOT IN
-			addSlotToContainer(new Slot(lpc, 0, 8, 17));
+			addSlotToContainer(new Slot(hpc, 0, 8, 17));
 		//SLOT OUT
-			addSlotToContainer(new Slot(lpc, 1, 98, 17));
+			addSlotToContainer(new Slot(hpc, 1, 98, 17));
 		//SLOT REQUIERED
-			addSlotToContainer(new slotCompressedAir(lpc, 2, 8, 51));
+			addSlotToContainer(new slotCompressedAir(hpc, 2, 8, 51));
 	}
 	@Override
 	public boolean canInteractWith(EntityPlayer entityplayer) {
-		return lpc.isUseableByPlayer(entityplayer);
+		return hpc.isUseableByPlayer(entityplayer);
 	}
 	
 	@Override

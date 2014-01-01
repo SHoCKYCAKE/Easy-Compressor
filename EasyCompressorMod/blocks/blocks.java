@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import EasyCompressorMod.items.itemBLOCKS;
 import EasyCompressorMod.items.items;
+import EasyCompressorMod.tileentity.tileEntityHighPressureCompressor;
 import EasyCompressorMod.tileentity.tileEntityLowPressureCompressor;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -26,6 +27,7 @@ public class blocks {
 	//Register Tile Entities
 	public static void registerTileEntities(){
 		GameRegistry.registerTileEntity(tileEntityLowPressureCompressor.class, blockInfo.lowPressureCompressor_TE_KEY);
+	    GameRegistry.registerTileEntity(tileEntityHighPressureCompressor.class, blockInfo.highPressureCompressor_TE_KEY);
 	}
 		
 	//Initilize Blocks
@@ -40,7 +42,7 @@ public class blocks {
 		GameRegistry.registerBlock(blockCompressedAir, itemBLOCKS.class, blockInfo.compressedAirOre_KEY);
 		MinecraftForge.setBlockHarvestLevel(blockCompressedAir, "pickaxe", 1);
 		
-		blockMyLeaf = new blockMyLeaf(blockInfo.myLeaf_ID, Material.leaves, false);
+		blockMyLeaf = new blockMyLeaf(blockInfo.myLeaf_ID, Material.leaves, true);
 		GameRegistry.registerBlock(blockMyLeaf, itemBLOCKS.class, blockInfo.myLeaf_KEY);
 		
 		blockMyWood = new blockMyWood(blockInfo.myWood_ID);
@@ -94,8 +96,8 @@ public class blocks {
 	//Register all Smelting Recipies
 	public static void registerBlockSmelting(){
 		
-		GameRegistry.addSmelting(blockInfo.myWood_ID, new ItemStack(items.compressedAir), 0.1f);
-
+		GameRegistry.addSmelting(blockInfo.myWood_ID, new ItemStack(items.compressedAir, 2), 0.1f);
+		
 	}
 	
 }

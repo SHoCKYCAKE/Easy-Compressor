@@ -50,6 +50,7 @@ public class Main {
 		//Recipies
 		items.registerItemRecipes();
 		items.registerItemSmelting();
+		items.registerShaplessCrafting();
 		
 		blocks.registerBlockRecipes();
 		blocks.registerBlockSmelting();

@@ -66,7 +66,8 @@ public class blockLowPressureCompressor extends BlockContainer {
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ){
         if(!world.isRemote){
-        	FMLNetworkHandler.openGui(player, Main.instance, 0, world, x, y, z);
+        	//                      Fuer jedes neues GUI + 1 v    + guiHandler neuen Case einbauen
+        	FMLNetworkHandler.openGui(player, Main.instance, 1, world, x, y, z);
         }
 		return true;	
 	}
@@ -74,9 +75,9 @@ public class blockLowPressureCompressor extends BlockContainer {
 	@Override
 	public void breakBlock(World world, int x, int y, int z, int id, int meta) {
 		
-		TileEntity te = world.getBlockTileEntity(x, y, z);
-		if(te != null && te instanceof IInventory){
-			IInventory inventory = (IInventory)te;
+		TileEntity teLow = world.getBlockTileEntity(x, y, z);
+		if(teLow != null && teLow instanceof IInventory){
+			IInventory inventory = (IInventory)teLow;
 			
 			for(int i = 0; i < inventory.getSizeInventory(); i++){
 				ItemStack stack = inventory.getStackInSlotOnClosing(i);
@@ -101,5 +102,4 @@ public class blockLowPressureCompressor extends BlockContainer {
 		
 		super.breakBlock(world, x, y, z, id, meta);
 	}
-	
 }

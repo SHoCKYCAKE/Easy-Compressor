@@ -1,5 +1,7 @@
 package EasyCompressorMod.blocks;
 
+import EasyCompressorMod.tileentity.tileEntityLowPressureCompressor;
+
 public class blockInfo {
 	
 	//Texture Location
@@ -23,7 +25,7 @@ public class blockInfo {
 	
 	//Leaf
 	public static final String myLeaf_UNLOCALIZED_NAME = "pressureOakLeaf";
-	public static final String myLeaf_NAME = "Pressure Oak Leaf";
+	public static final String myLeaf_NAME = "Pressure Oak Leaves";
 	
 	//Wood
 	public static final String myWood_UNLOCALIZED_NAME = "pressureOakWood";
@@ -104,5 +106,6 @@ public class blockInfo {
 	
 	
 	//TileEntity
-	public static String lowPressureCompressor_TE_KEY = "lowPressureCompressorTileEntity";
+	public static String lowPressureCompressor_TE_KEY = "tileEntityLowPressureCompressor";
+	public static String highPressureCompressor_TE_KEY = "tileEntityHighPressureCompressor";
 }

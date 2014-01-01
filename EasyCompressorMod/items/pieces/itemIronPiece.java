@@ -17,8 +17,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 			setUnlocalizedName(itemInfo.ironPiece_UNLOCALIZED_NAME);
 		}
 
-		
-		
+
+
 		@Override
 		@SideOnly(Side.CLIENT)
 		public void registerIcons(IconRegister register) {

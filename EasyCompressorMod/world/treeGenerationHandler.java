@@ -37,10 +37,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
 	    
 		BiomeGenBase biomeGenBase = world.getWorldChunkManager().getBiomeGenAt(x + 16, z + 16);
 		
-		if(biomeGenBase == BiomeGenBase.swampland || biomeGenBase == BiomeGenBase.forest){
+		if(biomeGenBase == BiomeGenBase.swampland || biomeGenBase == BiomeGenBase.forestHills){
 			
 		}
-			for (int i = 0; i < 5; i++){
+			for (int i = 0; i < 1; i++){
 		                int Xcoord1 = x + random.nextInt(16); //where in chuck it generates
 		                int Ycoord1 = random.nextInt(100); //how high it generates
 		                int Zcoord1 = z + random.nextInt(16); //where in chunk it generates

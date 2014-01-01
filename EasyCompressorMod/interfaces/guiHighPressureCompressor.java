@@ -1,6 +1,7 @@
 package EasyCompressorMod.interfaces;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
@@ -8,25 +9,25 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-import EasyCompressorMod.tileentity.tileEntityLowPressureCompressor;
+import EasyCompressorMod.tileentity.tileEntityHighPressureCompressor;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 
 @SideOnly(Side.CLIENT)
-public class guiLowPressureCompressor extends GuiContainer{
+public class guiHighPressureCompressor extends GuiContainer{
 	
 	private ItemStack[] items;
 
-	public guiLowPressureCompressor(InventoryPlayer invPlayer, tileEntityLowPressureCompressor lpc) {
+	public guiHighPressureCompressor(InventoryPlayer invPlayer, tileEntityHighPressureCompressor lpc) {
 		
-		super(new containerLowPressureCompressor(invPlayer, lpc));
+		super(new containerHighPressureCompressor(invPlayer, lpc));
 		
 		xSize = 176;
 		ySize = 154;
 	}
 	
-	private static final ResourceLocation texture = new ResourceLocation("easycompressor", "textures/gui/lowPressureCompressorGUI.png");
+	private static final ResourceLocation texture = new ResourceLocation("easycompressor", "textures/gui/highPressureCompressorGUI.png");
 
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float f, int i, int j) {
@@ -40,7 +41,7 @@ public class guiLowPressureCompressor extends GuiContainer{
 	//In the GUI the Top Name
 	@Override
 	protected void drawGuiContainerForegroundLayer(int x, int y) {
-		fontRenderer.drawString("   Low Pressure Compressor", 8, 6, 0x404040);
+		fontRenderer.drawString("   High Pressure Compressor", 8, 6, 0x404040);
 	}
 	/*
 	

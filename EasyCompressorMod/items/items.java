@@ -1,10 +1,24 @@
 package EasyCompressorMod.items;
 
 import net.minecraft.block.Block;
+import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.EnumHelper;
+import EasyCompressorMod.armor.betterDiamondArmor.betterDiamondBoots;
+import EasyCompressorMod.armor.betterDiamondArmor.betterDiamondChestplate;
+import EasyCompressorMod.armor.betterDiamondArmor.betterDiamondHelmet;
+import EasyCompressorMod.armor.betterDiamondArmor.betterDiamondLeggings;
+import EasyCompressorMod.armor.betterGoldArmor.betterGoldBoots;
+import EasyCompressorMod.armor.betterGoldArmor.betterGoldChestplate;
+import EasyCompressorMod.armor.betterGoldArmor.betterGoldHelmet;
+import EasyCompressorMod.armor.betterGoldArmor.betterGoldLeggings;
+import EasyCompressorMod.armor.betterIronArmor.betterIronBoots;
+import EasyCompressorMod.armor.betterIronArmor.betterIronChestplate;
+import EasyCompressorMod.armor.betterIronArmor.betterIronHelmet;
+import EasyCompressorMod.armor.betterIronArmor.betterIronLeggings;
+import EasyCompressorMod.blocks.blocks;
 import EasyCompressorMod.items.betterIngots.betterDiamond;
 import EasyCompressorMod.items.betterIngots.betterGoldIngot;
 import EasyCompressorMod.items.betterIngots.betterIronIngot;
@@ -46,6 +60,20 @@ public class items {
 	//Better Diamond
 	public static EnumToolMaterial betterDiamondMaterial = EnumHelper.addToolMaterial("betterDiamond", 3, 3200, 9.7F, 3.4F, 13);
 
+	
+	//For Armor
+	//Better Iron
+	public static EnumArmorMaterial betterIronArmorMaterial = EnumHelper.addArmorMaterial("betterArmorIron", 30, new int[] {3, 7, 6, 3}, 16);
+	
+	//Better Gold
+	public static EnumArmorMaterial betterGoldArmorMaterial = EnumHelper.addArmorMaterial("betterArmorGold", 14, new int[] {2, 6, 4, 1}, 30);
+
+	//Better Diamond
+	public static EnumArmorMaterial betterDiamondArmorMaterial = EnumHelper.addArmorMaterial("betterArmorDiamond", 67, new int[] {3, 9, 6, 3}, 15);
+
+	
+	
+	
 	//Create field for use
 	
 	//Cores
@@ -90,6 +118,25 @@ public class items {
 	public static Item betterDiamondHoe;
 	public static Item betterDiamondShovel;
 	
+	//Armor
+	
+	//Iron
+	public static Item betterIronHelmet;
+	public static Item betterIronChestplate;
+	public static Item betterIronLeggings;
+	public static Item betterIronBoots;
+	
+	//Gold
+	public static Item betterGoldHelmet;
+	public static Item betterGoldChestplate;
+	public static Item betterGoldLeggings;
+	public static Item betterGoldBoots;
+	
+	//Diamond
+	public static Item betterDiamondHelmet;
+	public static Item betterDiamondChestplate;
+	public static Item betterDiamondLeggings;
+	public static Item betterDiamondBoots;
 	//Initilize Items
 	public static void init() {
 		
@@ -135,6 +182,26 @@ public class items {
 		betterDiamondHoe = new betterDiamondHoe(itemInfo.betterDiamondHoe_ID, betterDiamondMaterial);
 		betterDiamondShovel = new betterDiamondShovel(itemInfo.betterDiamondShovel_ID, betterDiamondMaterial);
 
+		
+		//Armour
+		
+		//Iron
+		betterIronHelmet = new betterIronHelmet(itemInfo.betterIronHelmet_ID, betterIronArmorMaterial, 3, 0);
+		betterIronChestplate = new betterIronChestplate(itemInfo.betterIronChestplate_ID, betterIronArmorMaterial, 3 ,1);
+		betterIronLeggings = new betterIronLeggings(itemInfo.betterIronLeggings_ID, betterIronArmorMaterial, 3 ,2);
+		betterIronBoots = new betterIronBoots(itemInfo.betterIronBoots_ID, betterIronArmorMaterial, 3 , 3);
+		
+		//Gold
+		betterGoldHelmet = new betterGoldHelmet(itemInfo.betterGoldHelmet_ID, betterGoldArmorMaterial, 3, 0);
+		betterGoldChestplate = new betterGoldChestplate(itemInfo.betterGoldChestplate_ID, betterGoldArmorMaterial, 3 ,1);
+		betterGoldLeggings = new betterGoldLeggings(itemInfo.betterGoldLeggings_ID, betterGoldArmorMaterial, 3 ,2);
+		betterGoldBoots = new betterGoldBoots(itemInfo.betterGoldBoots_ID, betterGoldArmorMaterial, 3 , 3);
+		
+		//Diamond
+		betterDiamondHelmet = new betterDiamondHelmet(itemInfo.betterDiamondHelmet_ID, betterDiamondArmorMaterial, 3, 0);
+		betterDiamondChestplate = new betterDiamondChestplate(itemInfo.betterDiamondChestplate_ID, betterDiamondArmorMaterial, 3 ,1);
+		betterDiamondLeggings = new betterDiamondLeggings(itemInfo.betterDiamondLeggings_ID, betterDiamondArmorMaterial, 3 ,2);
+		betterDiamondBoots = new betterDiamondBoots(itemInfo.betterDiamondBoots_ID, betterDiamondArmorMaterial, 3 , 3);
 	}
 	
 	
@@ -183,6 +250,25 @@ public class items {
 		LanguageRegistry.addName(betterDiamondHoe, itemInfo.betterDiamondHoe_NAME);
 		LanguageRegistry.addName(betterDiamondShovel, itemInfo.betterDiamondShovel_NAME);
 		
+		//Armor
+		
+		//Iron
+		LanguageRegistry.addName(betterIronHelmet, itemInfo.betterIronHelmet_NAME);
+		LanguageRegistry.addName(betterIronChestplate, itemInfo.betterIronChestplate_NAME);
+		LanguageRegistry.addName(betterIronLeggings, itemInfo.betterIronLeggings_NAME);
+		LanguageRegistry.addName(betterIronBoots, itemInfo.betterIronBoots_NAME);
+		
+		//Gold
+		LanguageRegistry.addName(betterGoldHelmet, itemInfo.betterGoldHelmet_NAME);
+		LanguageRegistry.addName(betterGoldChestplate, itemInfo.betterGoldChestplate_NAME);
+		LanguageRegistry.addName(betterGoldLeggings, itemInfo.betterGoldLeggings_NAME);
+		LanguageRegistry.addName(betterGoldBoots, itemInfo.betterGoldBoots_NAME);
+		
+		//Diamond
+		LanguageRegistry.addName(betterDiamondHelmet, itemInfo.betterDiamondHelmet_NAME);
+		LanguageRegistry.addName(betterDiamondChestplate, itemInfo.betterDiamondChestplate_NAME);
+		LanguageRegistry.addName(betterDiamondLeggings, itemInfo.betterDiamondLeggings_NAME);
+		LanguageRegistry.addName(betterDiamondBoots, itemInfo.betterDiamondBoots_NAME);
 	}
 	
 	//Register All Recipies
@@ -419,5 +505,8 @@ public class items {
 		
 		GameRegistry.addSmelting(itemInfo.defectiveLowPressureCore_DEFAULT, new ItemStack(items.lowPressureCore), 0.1f);
 
+	}
+	public static void registerShaplessCrafting(){
+        GameRegistry.addShapelessRecipe(new ItemStack(Block.planks, 5), new ItemStack(blocks.blockMyWood, 1));
 	}
 }
