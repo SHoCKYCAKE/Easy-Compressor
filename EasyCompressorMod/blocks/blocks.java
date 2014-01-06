@@ -20,6 +20,9 @@ public class blocks {
 	public static Block blockMyLeaf;
 	public static Block blockMyWood;
 	public static Block blockMySapling;
+	public static Block blockHardenedGlass;
+	public static Block blockCompressedGlowstone;
+	public static Block blockGlowstoneLamp;
 	public static Item itemLowPressureCore;
 	public static Item itemHighPressureCore;
 	
@@ -50,6 +53,12 @@ public class blocks {
 		
 		blockMySapling = new blockMySapling(blockInfo.mySapling_ID, Material.leaves);
 		GameRegistry.registerBlock(blockMySapling, itemBLOCKS.class, blockInfo.mySapling_KEY);
+		
+		blockHardenedGlass = new blockHardenedGlass(blockInfo.hardenedGlass_ID, Material.glass, false);
+		GameRegistry.registerBlock(blockHardenedGlass, itemBLOCKS.class, blockInfo.hardenedGlass_KEY);
+		
+		blockGlowstoneLamp = new blockGlowstoneLamp(blockInfo.glowstoneLamp_ID, Material.iron);
+		GameRegistry.registerBlock(blockGlowstoneLamp, itemBLOCKS.class, blockInfo.glowstoneLamp_KEY);
 	
 	}
 	
@@ -66,6 +75,11 @@ public class blocks {
 		LanguageRegistry.addName(blockMyWood, blockInfo.myWood_NAME);
 		
 		LanguageRegistry.addName(blockMySapling, blockInfo.mySapling_NAME);
+		
+		LanguageRegistry.addName(blockHardenedGlass, blockInfo.hardenedGlass_NAME);
+		
+		LanguageRegistry.addName(blockGlowstoneLamp, blockInfo.glowstoneLamp_NAME);
+
 
 
 	}
@@ -91,7 +105,15 @@ public class blocks {
 								'O', Block.obsidian,
 								'P', Block.pistonBase,
 								'C', items.highPressureCore,
-							 });	
+							 });
+		GameRegistry.addRecipe(new ItemStack(blockGlowstoneLamp),
+				new Object[] { 	"GSG",
+								"S S",
+								"GSG" ,
+								
+								'G', blocks.blockHardenedGlass,
+								'S', items.compressedGlowstone,
+							 });
 	}
 	//Register all Smelting Recipies
 	public static void registerBlockSmelting(){

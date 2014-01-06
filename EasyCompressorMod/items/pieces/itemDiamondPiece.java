@@ -1,9 +1,9 @@
 package EasyCompressorMod.items.pieces;
 
-import EasyCompressorMod.items.itemInfo;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import EasyCompressorMod.CreativTab;
+import EasyCompressorMod.items.itemInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -12,7 +12,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 		public itemDiamondPiece(int id) {
 			super(id);
-			setCreativeTab(CreativeTabs.tabMaterials);
+			setCreativeTab(CreativTab.tabMex);
 			setMaxStackSize(64);
 			setUnlocalizedName(itemInfo.diamondPiece_UNLOCALIZED_NAME);
 		}

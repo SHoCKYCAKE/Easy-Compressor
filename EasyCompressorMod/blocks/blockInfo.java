@@ -35,6 +35,15 @@ public class blockInfo {
 	public static final String mySapling_UNLOCALIZED_NAME = "pressureOakSapling";
 	public static final String mySapling_NAME = "Pressure Oak Sapling";
 	
+	//HardenedGlass
+	public static final String hardenedGlass_UNLOCALIZED_NAME = "hardenedGlass";
+	public static final String hardenedGlass_NAME = "Hardened Glass";
+	
+	//GlowstoneLamp
+	public static final String glowstoneLamp_UNLOCALIZED_NAME = "glowstoneLamp";
+	public static final String glowstoneLamp_NAME = "Glowstone Lamp";
+	
+	
 	
 	
 	//IDs
@@ -68,6 +77,16 @@ public class blockInfo {
 	public static int mySapling_ID;
 	public static final String mySapling_KEY = "Pressure Oak Sapling";
 	public static final int mySapling_DEFAULT = 2086;
+	
+	//HardenedGlass
+	public static int hardenedGlass_ID;
+	public static final String hardenedGlass_KEY = "Hardened Glass";
+	public static final int hardenedGlass_DEFAULT = 2087;
+	
+	//GlowstoneLamp
+	public static int glowstoneLamp_ID;
+	public static final String glowstoneLamp_KEY = "Glowstone Lamp";
+	public static final int glowstoneLamp_DEFAULT = 2089;
 	
 	
 	
@@ -103,6 +122,19 @@ public class blockInfo {
 	public static final String mySaplingBOTTOM = "mySapling_BOT";
 	public static final String mySaplingSIDE = "mySapling_SIDE"; 
 	
+	//HardenedGlass
+	public static final String hardenedGlassTOP = "hardenedGlass_TOP";
+	public static final String hardenedGlassBOTTOM = "hardenedGlass_BOT";
+	public static final String hardenedGlassSIDE = "hardenedGlass_SIDE";
+	
+	//GlowstoneLamp
+	public static final String glowstoneLampTOP = "glowstoneLamp_TOP";
+	public static final String glowstoneLampBOTTOM = "glowstoneLamp_BOT";
+	public static final String glowstoneLampSIDE = "glowstoneLamp_SIDE";
+	
+	
+	//Other
+	public static final String glow_PARTICLE_TEXTURE = "glow";
 	
 	
 	//TileEntity

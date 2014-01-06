@@ -3,6 +3,7 @@ package EasyCompressorMod.blocks;
 import java.util.ArrayList;
 import java.util.Random;
 
+import EasyCompressorMod.CreativTab;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeavesBase;
 import net.minecraft.block.material.Material;
@@ -22,7 +23,7 @@ public class blockMyLeaf extends BlockLeavesBase implements IShearable{
     protected blockMyLeaf(int par1, Material par2Material, boolean par3){
         super(par1, par2Material, par3);
         this.graphicsLevel = par3;
-		setCreativeTab(CreativeTabs.tabDecorations);
+		setCreativeTab(CreativTab.tabMex);
 		setHardness(0.2F);
 		setStepSound(Block.soundGrassFootstep);
 		setLightOpacity(1);

@@ -43,6 +43,10 @@ public class Main {
 	
 	@EventHandler
 	public void load(FMLInitializationEvent event) {
+	
+		//CreativTab
+        CreativTab.load();
+		
 		//Names
 		items.addNames();
 		blocks.addNames();

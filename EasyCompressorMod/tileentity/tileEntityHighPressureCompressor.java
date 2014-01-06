@@ -12,15 +12,6 @@ public class tileEntityHighPressureCompressor extends TileEntity implements IInv
 	
 	private ItemStack[] items;
 	
-	private int stackSize = 0;
-	
-	public static Item ironPiece;
-	public static Item goldPiece;
-	public static Item diamondPiece;
-	
-	ItemStack ironPieceTest = new ItemStack(EasyCompressorMod.items.items.ironPiece);
-	ItemStack goldPieceTest = new ItemStack(EasyCompressorMod.items.items.goldPiece);
-    ItemStack diamondPieceTest = new ItemStack(EasyCompressorMod.items.items.diamondPiece);
 	
 	public tileEntityHighPressureCompressor(){
 		items = new ItemStack[3];
@@ -138,51 +129,70 @@ public class tileEntityHighPressureCompressor extends TileEntity implements IInv
 			}
 		}
 	}
-	
 	@Override
 	public void updateEntity(){
-		if(worldObj.isRemote == false && getStackInSlot(2) != null && getStackInSlot(0) != null && getStackInSlot(2).stackSize >= 1 && getStackInSlot(0).stackSize >= 1){
-			if(getStackInSlot(0).itemID == Item.ingotIron.itemID || getStackInSlot(0).itemID == Item.ingotGold.itemID || getStackInSlot(0).itemID == Item.diamond.itemID){
+		if(getStackInSlot(2) != null && getStackInSlot(0) != null && getStackInSlot(2).stackSize >= 1 && getStackInSlot(0).stackSize >= 1){
+			if(getStackInSlot(0).itemID == Item.ingotIron.itemID || getStackInSlot(0).itemID == Item.ingotGold.itemID || getStackInSlot(0).itemID == Item.diamond.itemID || getStackInSlot(0).itemID == Item.emerald.itemID || getStackInSlot(0).itemID == Item.redstone.itemID){
 					
 				if(getStackInSlot(0).itemID == Item.ingotIron.itemID){
 
 					if(getStackInSlot(1) == null){
+						setInventorySlotContents(1, new ItemStack(EasyCompressorMod.items.items.ironPiece));
+						//items[1].stackSize++;
 						decrStackSize(0, 1);
 						decrStackSize(2, 1);
-						setInventorySlotContents(1, ironPieceTest);
-						items[1].stackSize++;
-					}else if(getStackInSlot(1).stackSize <= 64){
+					}else if(getStackInSlot(1).stackSize <= 63){
 						decrStackSize(0, 1);
 						decrStackSize(2, 1);
 						items[1].stackSize++;
 					}
 				}else if(getStackInSlot(0).itemID == Item.ingotGold.itemID){
 					if(getStackInSlot(1) == null){
+						setInventorySlotContents(1, new ItemStack(EasyCompressorMod.items.items.goldPiece));
+						//items[1].stackSize++;
 						decrStackSize(0, 1);
 						decrStackSize(2, 1);
-						setInventorySlotContents(1, goldPieceTest);
-						items[1].stackSize++;
-					}else if(getStackInSlot(1).stackSize <= 64){
+					}else if(getStackInSlot(1).stackSize <= 63){
 						decrStackSize(0, 1);
 						decrStackSize(2, 1);
 						items[1].stackSize++;
 						}
 				}else if(getStackInSlot(0).itemID == Item.diamond.itemID){
 					if(getStackInSlot(1) == null){
+						setInventorySlotContents(1, new ItemStack(EasyCompressorMod.items.items.diamondPiece));
+						//items[1].stackSize++;
 						decrStackSize(0, 1);
 						decrStackSize(2, 1);
-						setInventorySlotContents(1, diamondPieceTest);
-						items[1].stackSize++;
-					}else if(getStackInSlot(1).stackSize <= 64){
+					}else if(getStackInSlot(1).stackSize <= 63){
 						decrStackSize(0, 1);
 						decrStackSize(2, 1);
 						items[1].stackSize++;
 					}
-				}else{
-			       return;
+				}else if(getStackInSlot(0).itemID == Item.emerald.itemID){
+					if(getStackInSlot(1) == null){
+						setInventorySlotContents(1, new ItemStack(EasyCompressorMod.items.items.emeraldPiece));
+						//items[1].stackSize++;
+						decrStackSize(0, 1);
+						decrStackSize(2, 1);
+					}else if(getStackInSlot(1).stackSize <= 63){
+						decrStackSize(0, 1);
+						decrStackSize(2, 1);
+						items[1].stackSize++;
+					}
+				}else if(getStackInSlot(0).itemID == Item.redstone.itemID){
+					if(getStackInSlot(1) == null){
+						setInventorySlotContents(1, new ItemStack(EasyCompressorMod.items.items.redstonePiece));
+						//items[1].stackSize++;
+						decrStackSize(0, 1);
+						decrStackSize(2, 1);
+					}else if(getStackInSlot(1).stackSize <= 63){
+						decrStackSize(0, 1);
+						decrStackSize(2, 1);
+						items[1].stackSize++;
+					}
 				}
 			}else{
-			   return;
+				return;
 			}
 		}
 	}

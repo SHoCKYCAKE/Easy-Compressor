@@ -13,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
+import EasyCompressorMod.CreativTab;
 import EasyCompressorMod.Main;
 import EasyCompressorMod.tileentity.tileEntityHighPressureCompressor;
 import cpw.mods.fml.common.network.FMLNetworkHandler;
@@ -24,7 +25,7 @@ public class blockHighPressureCompressor extends BlockContainer {
 	public blockHighPressureCompressor(int id) {
 		super(id, Material.iron);
 		
-		setCreativeTab(CreativeTabs.tabRedstone);
+		setCreativeTab(CreativTab.tabMex);
 		setHardness(2F);
 		setStepSound(Block.soundMetalFootstep);
 		setUnlocalizedName(blockInfo.highPressureCompressor_UNLOCALIZED_NAME);

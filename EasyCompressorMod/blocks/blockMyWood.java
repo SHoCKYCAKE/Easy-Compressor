@@ -7,6 +7,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.Icon;
+import EasyCompressorMod.CreativTab;
 import EasyCompressorMod.items.itemInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -16,7 +17,7 @@ public class blockMyWood extends Block {
 	public blockMyWood(int id) {
 		super(id, Material.wood);
 		
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(CreativTab.tabMex);
 		setHardness(2.5f);
 		setStepSound(Block.soundWoodFootstep);
 		setUnlocalizedName(blockInfo.myWood_UNLOCALIZED_NAME);

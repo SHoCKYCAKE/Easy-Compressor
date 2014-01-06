@@ -13,9 +13,6 @@ public class tileEntityLowPressureCompressor extends TileEntity implements IInve
 	
 	private ItemStack[] items;
 	
-	private ItemStack obsi = new ItemStack(Block.obsidian);
-	private ItemStack core = new ItemStack(EasyCompressorMod.items.items.highPressureCore);
-	
 	public tileEntityLowPressureCompressor(){
 		items = new ItemStack[3];
 	}
@@ -133,37 +130,65 @@ public class tileEntityLowPressureCompressor extends TileEntity implements IInve
 	}
 	@Override
 	public void updateEntity(){
-		if(worldObj.isRemote == false && getStackInSlot(2) != null && getStackInSlot(0) != null && getStackInSlot(2).stackSize >= 1 && getStackInSlot(0).stackSize >= 1){
-			if(getStackInSlot(0).itemID == EasyCompressorMod.items.itemInfo.defectiveHighPressureCore_ID || getStackInSlot(0).itemID == Block.wood.blockID){
+		if(getStackInSlot(2) != null && getStackInSlot(0) != null && getStackInSlot(2).stackSize >= 1 && getStackInSlot(0).stackSize >= 1){
+			if(getStackInSlot(0).itemID == EasyCompressorMod.items.items.defectiveHighPressureCore.itemID || getStackInSlot(0).itemID == Block.wood.blockID || getStackInSlot(0).itemID == Item.glowstone.itemID || getStackInSlot(0).itemID == Block.glass.blockID){
 					
-				if(getStackInSlot(0).itemID == Block.wood.blockID){
+		    	if(getStackInSlot(0).itemID == Block.wood.blockID){
 					if(getStackInSlot(2).stackSize >= 2 && getStackInSlot(0).stackSize >= 4){
 
 					if(getStackInSlot(1) == null){
+						setInventorySlotContents(1, new ItemStack(Block.obsidian));
+					//	items[1].stackSize++;
 						decrStackSize(0, 4);
 						decrStackSize(2, 2);
-						setInventorySlotContents(1, obsi);
-						items[1].stackSize++;
-					}else if(getStackInSlot(1).stackSize <= 64){
+					}else if(getStackInSlot(1).stackSize <= 63){
 						decrStackSize(0, 4);
 						decrStackSize(2, 2);
 						items[1].stackSize++;	
+						}
 					}
-				}else if(getStackInSlot(0).itemID == EasyCompressorMod.items.items.defectiveHighPressureCore.itemID){
+		         }else if(getStackInSlot(0).itemID == EasyCompressorMod.items.items.defectiveHighPressureCore.itemID){
 					if(getStackInSlot(2).stackSize >= 16){
 						if(getStackInSlot(1) == null){
+							setInventorySlotContents(1, new ItemStack(EasyCompressorMod.items.items.highPressureCore));
+						//	items[1].stackSize++;
 							decrStackSize(0, 1);
 							decrStackSize(2, 16);
-							setInventorySlotContents(1, core);
-							items[1].stackSize++;
-						}else if(getStackInSlot(1).stackSize <= 64){
+						}else if(getStackInSlot(1).stackSize <= 63){
 							decrStackSize(0, 1);
 							decrStackSize(2, 16);
 							items[1].stackSize++;
 							}
 					    }
+				  }else if(getStackInSlot(0).itemID == Item.glowstone.itemID){
+					  if(getStackInSlot(2).stackSize >= 2){
+						  if(getStackInSlot(1) == null){
+							  setInventorySlotContents(1, new ItemStack(EasyCompressorMod.items.items.compressedGlowstone));
+							  decrStackSize(0, 1);
+							  decrStackSize(2, 2);
+						  }else if(getStackInSlot(1).stackSize <= 63){
+								decrStackSize(0, 1);
+								decrStackSize(2, 2);
+								items[1].stackSize++;
+						  }
+					  	}
+				  }else if(getStackInSlot(0).itemID == Block.glass.blockID){
+					  if(getStackInSlot(2).stackSize >= 2){
+						  if(getStackInSlot(1) == null){
+							  setInventorySlotContents(1, new ItemStack(EasyCompressorMod.blocks.blocks.blockHardenedGlass));
+					     	  decrStackSize(0, 1);
+							  decrStackSize(2, 2);
+						  }else if(getStackInSlot(1).stackSize <= 63){
+								decrStackSize(0, 1);
+								decrStackSize(2, 2);
+								items[1].stackSize++;
+						  }
 					}
-				}
+					}else{
+						return;
+					}
+				}else{
+					return;
 			}
 		}
 	}

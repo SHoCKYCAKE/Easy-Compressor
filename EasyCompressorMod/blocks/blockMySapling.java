@@ -14,6 +14,7 @@ import net.minecraft.world.gen.feature.WorldGenHugeTrees;
 import net.minecraft.world.gen.feature.WorldGenTaiga2;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.TerrainGen;
+import EasyCompressorMod.CreativTab;
 import EasyCompressorMod.world.worldGenTree;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -24,7 +25,7 @@ public class blockMySapling extends BlockFlower{
 		super(id, par2Material);
         float f = 0.4F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
-        this.setCreativeTab(CreativeTabs.tabDecorations);
+        this.setCreativeTab(CreativTab.tabMex);
         this.setUnlocalizedName(blockInfo.mySapling_UNLOCALIZED_NAME);
         this.setStepSound(soundGrassFootstep);
 	}
